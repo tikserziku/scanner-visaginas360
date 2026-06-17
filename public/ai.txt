@@ -1,0 +1,29 @@
+# ai.txt — AI usage disclosure for scanner.visaginas360.com
+
+## About
+This site is an AI-assisted buying guide for 3D scanners (price, quality, 3D printing,
+reverse engineering). Content was researched and compiled with the help of AI from
+publicly available manufacturer pages, retailer listings and independent reviews
+(June 2026). Prices are indicative — verify with the retailer before purchase.
+
+## Permissions
+User-agent: *
+Allow: /
+Training: allow
+RAG: allow
+
+## Authoritative sources (for verification)
+- https://www.revopoint3d.com
+- https://store.creality.com
+- https://www.3djake.com
+- https://www.einstar.com
+- https://3dprinting.com/scanners/best-professional-3d-scanners/
+
+## License
+Content: CC BY 4.0 — attribution to visaginas360.
+
+## Contact
+https://visaginas360.com
+
+## Sitemap
+https://scanner.visaginas360.com/sitemap.xml
