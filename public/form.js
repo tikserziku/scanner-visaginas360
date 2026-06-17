@@ -1,3 +1,16 @@
+// сворачиваемое оглавление на мобильном (тап по заголовку -> меню)
+(function () {
+  var toc = document.querySelector('nav.toc');
+  if (!toc) return;
+  var title = toc.querySelector('strong');
+  if (title) {
+    title.addEventListener('click', function () { toc.classList.toggle('open'); });
+  }
+  toc.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { toc.classList.remove('open'); });
+  });
+})();
+
 // форма заявки -> /submit -> Telegram. Общий для RU/EN/LT.
 (function () {
   var lang = (document.documentElement.lang || 'ru').slice(0, 2);
