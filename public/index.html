@@ -526,8 +526,8 @@
   <h2 style="color:var(--accent2)">💼 Нужен такой же разбор под вашу задачу?</h2>
   <p>Этот обзор собран с помощью ИИ за часы, а не недели. Так можно разобрать любой выбор — оборудование, софт, технику, услугу: найти варианты, сравнить, посчитать реальные цены и честно сказать, стоит ли вообще тратить деньги.</p>
   <p style="margin-bottom:0">
-    <a class="buybtn" href="https://visaginas360.com" target="_blank" rel="noopener">Заказать разбор под свою задачу →</a>
-    <a class="buybtn alt" href="https://visaginas360.com" target="_blank" rel="noopener">Научиться делать так самому →</a>
+    <a class="buybtn js-lead-open" href="#lead">Заказать разбор под свою задачу →</a>
+    <a class="buybtn alt js-lead-open" href="#lead">Научиться делать так самому →</a>
   </p>
 </div>
 
@@ -605,5 +605,19 @@ document.querySelectorAll('#'+tableId+' th').forEach((th,i)=>{
 }
 makeSortable('t'); makeSortable('t2'); makeSortable('t3'); makeSortable('t4'); makeSortable('t6'); makeSortable('t7');
 </script>
+<div class="modal-bg" id="lead"><div class="modal-card">
+<button class="modal-close" aria-label="Закрыть">&times;</button>
+<h3>Заявка на AI-разбор</h3>
+<p class="sub">Опишите задачу — отвечу лично. Заявка приходит напрямую в Telegram.</p>
+<form class="lead-form">
+<input type="text" name="name" placeholder="Ваше имя" maxlength="120">
+<input type="text" name="contact" placeholder="Контакт: Telegram / email / телефон" maxlength="160" required>
+<textarea name="message" rows="4" placeholder="Что нужно разобрать или выбрать?" maxlength="1200"></textarea>
+<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button type="submit" class="buybtn">Отправить заявку →</button>
+<div class="form-status"></div>
+</form>
+</div></div>
+<script src="form.js"></script>
 </body>
 </html>

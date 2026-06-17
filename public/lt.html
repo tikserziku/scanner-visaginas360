@@ -526,8 +526,8 @@
   <h2 style="color:var(--accent2)">💼 Reikia tokios pat analizės jūsų užduočiai?</h2>
   <p>Ši apžvalga surinkta su DI pagalba per valandas, o ne savaites. Taip galima išanalizuoti bet kokį pasirinkimą — įrangą, programinę įrangą, techniką, paslaugą: rasti variantus, palyginti, suskaičiuoti realias kainas ir sąžiningai pasakyti, ar apskritai verta leisti pinigus.</p>
   <p style="margin-bottom:0">
-    <a class="buybtn" href="https://visaginas360.com" target="_blank" rel="noopener">Užsisakyti analizę savo užduočiai →</a>
-    <a class="buybtn alt" href="https://visaginas360.com" target="_blank" rel="noopener">Išmokti daryti taip pačiam →</a>
+    <a class="buybtn js-lead-open" href="#lead">Užsisakyti analizę savo užduočiai →</a>
+    <a class="buybtn alt js-lead-open" href="#lead">Išmokti daryti taip pačiam →</a>
   </p>
 </div>
 
@@ -605,5 +605,19 @@ document.querySelectorAll('#'+tableId+' th').forEach((th,i)=>{
 }
 makeSortable('t'); makeSortable('t2'); makeSortable('t3'); makeSortable('t4'); makeSortable('t6'); makeSortable('t7');
 </script>
+<div class="modal-bg" id="lead"><div class="modal-card">
+<button class="modal-close" aria-label="Uždaryti">&times;</button>
+<h3>Užsakyti DI analizę</h3>
+<p class="sub">Aprašykite užduotį — atsakysiu asmeniškai. Užklausa keliauja tiesiai į Telegram.</p>
+<form class="lead-form">
+<input type="text" name="name" placeholder="Jūsų vardas" maxlength="120">
+<input type="text" name="contact" placeholder="Kontaktas: Telegram / el. paštas / telefonas" maxlength="160" required>
+<textarea name="message" rows="4" placeholder="Ką reikia išanalizuoti ar pasirinkti?" maxlength="1200"></textarea>
+<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button type="submit" class="buybtn">Siųsti užklausą →</button>
+<div class="form-status"></div>
+</form>
+</div></div>
+<script src="form.js"></script>
 </body>
 </html>
