@@ -172,6 +172,29 @@ footer{color:var(--muted);font-size:.84rem;margin-top:44px;border-top:1px solid 
   opacity:0;transition:opacity .25s;pointer-events:none;z-index:99;box-shadow:var(--shadow)}
 .copyhint.show{opacity:1}
 
+/* ---- decision flowchart ---- */
+.flow{display:flex;flex-direction:column;align-items:center;margin:20px 0}
+.flow .node{width:100%;max-width:700px;border-radius:14px;padding:15px 20px;text-align:center;
+  border:1px solid var(--border);background:var(--panel);box-shadow:var(--shadow);animation:fadeUp .5s ease both}
+.flow .node b{display:block;margin-bottom:9px;font-size:1.02rem}
+.flow .node-start{background:linear-gradient(135deg,rgba(96,165,250,.16),var(--panel2));border-color:rgba(96,165,250,.45)}
+.flow .node-q{border-color:rgba(251,191,36,.45)}
+.flow .node-ai{background:linear-gradient(135deg,rgba(94,155,255,.15),var(--panel2));border-color:rgba(94,155,255,.45)}
+.flow .node-go{background:linear-gradient(135deg,rgba(52,211,153,.18),var(--panel2));border-color:rgba(52,211,153,.55);font-weight:750;font-size:1.05rem}
+.flow .arrow{font-size:1.7rem;color:var(--accent2);line-height:1;margin:7px 0}
+.flow .branches{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.flow .branches span{font-size:.85rem;padding:5px 13px;border-radius:30px;font-weight:600}
+.flow .br-stop{background:rgba(248,113,113,.15);color:#fca5a5}
+.flow .br-go{background:rgba(52,211,153,.15);color:#6ee7b7}
+@media(max-width:680px){.flow .branches{flex-direction:column;gap:6px}}
+
+/* ---- principles grid ---- */
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:16px 0}
+.principles .p{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px 16px;transition:.18s}
+.principles .p:hover{border-color:var(--accent);transform:translateY(-2px)}
+.principles .p b{color:var(--accent);display:block;margin-bottom:4px;font-size:.96rem}
+.principles .p span{font-size:.87rem;color:var(--muted);display:block}
+
 /* ---- mobile ---- */
 @media(max-width:680px){
   h1{font-size:1.7rem}
