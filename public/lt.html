@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D skeneriai — kaina / kokybė / gamintojas (2026)</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --border:#2d333b;
+    --txt:#e6edf3; --muted:#9aa6b2; --accent:#58a6ff; --accent2:#3fb950;
+    --amber:#d29922; --blue:#388bfd; --red:#f85149;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;padding:0 0 80px}
+  header{background:linear-gradient(135deg,#161b22,#1c2230);
+    border-bottom:1px solid var(--border);padding:32px 24px;position:relative}
+  h1{margin:0 0 6px;font-size:1.7rem}
+  .sub{color:var(--muted);font-size:.95rem}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  h2{margin:38px 0 14px;font-size:1.3rem;border-left:4px solid var(--accent);padding-left:12px}
+  h3{margin:24px 0 10px;font-size:1.08rem;color:var(--accent)}
+  /* TOC */
+  nav.toc{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:16px 20px;margin:24px 0}
+  nav.toc strong{display:block;margin-bottom:8px;color:var(--muted);font-size:.8rem;
+    text-transform:uppercase;letter-spacing:.05em}
+  nav.toc a{color:var(--accent);text-decoration:none;margin-right:18px;font-size:.92rem;
+    display:inline-block;padding:2px 0}
+  nav.toc a:hover{text-decoration:underline}
+  /* table */
+  .tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:16px 0}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:760px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  th{background:var(--panel2);position:sticky;top:0;cursor:pointer;user-select:none;
+    font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  th:hover{color:var(--txt)}
+  tbody tr:hover{background:#1a2030}
+  td.model{font-weight:600;color:var(--txt)}
+  a.srch{display:inline-block;text-decoration:none;font-size:1.05rem;line-height:1;
+    padding:3px 7px;border-radius:6px;border:1px solid var(--border);background:var(--panel2)}
+  a.srch:hover{border-color:var(--accent);background:#23314a}
+  th.srchcol{text-align:center;width:42px}
+  td.srchcol{text-align:center}
+  td.model a{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(88,166,255,.6)}
+  td.model a:hover{border-bottom:1px solid var(--accent)}
+  td.model a::after{content:" 🔍";font-size:.7em;opacity:.6}
+  .stars{color:#e3b341;letter-spacing:1px;white-space:nowrap}
+  .stars .off{color:#3a4150}
+  td.badge{font-size:1.5rem;text-align:center;white-space:nowrap}
+  .verdict{font-size:.82rem;color:var(--muted);display:block}
+  .price{font-weight:700;color:var(--accent2);white-space:nowrap}
+  .pill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.78rem;font-weight:600}
+  .seg-green{background:rgba(63,185,80,.15);color:#56d364}
+  .seg-amber{background:rgba(210,153,34,.15);color:#e3b341}
+  .seg-blue{background:rgba(56,139,253,.15);color:#79c0ff}
+  /* cards */
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:16px 20px;margin:14px 0}
+  .card.green{border-left:4px solid var(--accent2)}
+  .card.amber{border-left:4px solid var(--amber)}
+  .card.blue{border-left:4px solid var(--blue)}
+  ol li,ul li{margin:6px 0}
+  .warn{background:rgba(248,81,73,.07);border:1px solid rgba(248,81,73,.25);
+    border-radius:10px;padding:8px 20px;margin:16px 0}
+  .rec td:first-child{color:var(--muted)}
+  .rec td:last-child{font-weight:600}
+  a.src{color:var(--accent);text-decoration:none}
+  a.src:hover{text-decoration:underline}
+  .srcs{columns:2;column-gap:30px;font-size:.88rem}
+  @media(max-width:680px){.srcs{columns:1}}
+  footer{color:var(--muted);font-size:.82rem;margin-top:40px;border-top:1px solid var(--border);padding-top:16px}
+  .copyhint{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    background:var(--accent);color:#0d1117;padding:8px 18px;border-radius:8px;font-weight:600;
+    opacity:0;transition:opacity .25s;pointer-events:none;z-index:99}
+  .copyhint.show{opacity:1}
+  .buybtn{display:inline-block;background:var(--accent2);color:#0d1117;font-weight:700;
+    text-decoration:none;padding:11px 22px;border-radius:8px;margin:6px 8px 6px 0;font-size:1rem}
+  .buybtn:hover{background:#56d364}
+  .buybtn.alt{background:var(--panel2);color:var(--accent);border:1px solid var(--accent)}
+  .pick{background:linear-gradient(135deg,#16271b,#1c2a30);border:2px solid var(--accent2);
+    border-radius:12px;padding:20px 24px;margin:22px 0}
+  .pick h2{border:0;margin:0 0 8px;padding:0}
+  details{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:8px 16px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600;color:var(--accent)}
+  .brand{font-weight:800;letter-spacing:2px;color:var(--accent2);font-size:.85rem;text-transform:uppercase}
+  .langbar{position:absolute;top:18px;right:24px}
+  .langbar a{display:inline-block;color:var(--muted);text-decoration:none;font-weight:700;font-size:.85rem;
+    padding:4px 9px;border-radius:6px;margin-left:4px;border:1px solid var(--border)}
+  .langbar a.active{background:var(--accent2);color:#0d1117;border-color:var(--accent2)}
+  .langbar a:hover{color:var(--txt)}
+  .intro{background:linear-gradient(135deg,#161b22,#1a2433);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:22px 0}
+  .intro h2{border:0;margin:0 0 8px;padding:0}
+  .stop{background:linear-gradient(135deg,#2a1a1a,#2a2018);border:2px solid #d29922;border-radius:12px;padding:20px 24px;margin:22px 0}
+  .stop h2{border:0;margin:0 0 8px;padding:0;color:#e3b341}
+</style>
+</head>
+<body>
+<header style="position:relative"><div class="wrap">
+  <div class="langbar"><a href="index.html">RU</a><a href="en.html">EN</a><a href="lt.html" class="active">LT</a></div>
+  <div class="brand">SCANNER · visaginas360.com</div>
+  <h1>🛰️ 3D skeneriai — kaina / kokybė / gamintojas</h1>
+  <div class="sub">Apžvalga nuo 2026-06-17 · profesionalūs (atvirkštinė inžinerija, metrologija) + vartotojiški 3D spausdinimui · kainos USD ir EUR (pristatymas ES) · spustelėjus langelį tekstas nukopijuojamas · spustelėjus stulpelio antraštę rūšiuojama</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="intro">
+  <h2>🤖 Kaip su DI pagalba išsirinkti tai, ko jums tikrai reikia</h2>
+  <p>Šis puslapis — <b>DI analizės pavyzdys konkrečiai užduočiai</b>. Jūs aprašote, ko reikia — DI suranda modelius, palygina charakteristikas, suskaičiuoja realias kainas parduotuvėse, atmeta pasenusius variantus ir viską surenka į vieną aiškią apžvalgą per minutes, o ne valandas paieškos. Čia tai padaryta 3D skeneriams, bet lygiai taip pat galima išanalizuoti <b>bet kokį pirkinį ar sprendimą</b>.</p>
+  <p style="margin-bottom:0">Svarbiausia — gera DI analizė yra sąžininga net tada, kai naudingiau <b>nepirkti</b> (žr. bloką žemiau). Tokią analizę galima <b>užsisakyti savo užduočiai</b> arba <b>išmokti daryti pačiam</b> — plačiau <a class="src" href="https://visaginas360.com" target="_blank" rel="noopener">visaginas360.com</a>.</p>
+</div>
+
+<div class="stop">
+  <h2>🛑 Ar apskritai verta dabar leisti pinigus? — stop signalas</h2>
+  <p>Prieš mokant DI padeda užduoti pagrindinį klausimą: <b>ar įrankio reikia būtent dabar — ar yra svarbesnių prioritetų?</b></p>
+  <ul>
+    <li>Jei jau turite įrangą, kuri bent iš dalies sprendžia užduotį — pirmiausia išspauskite iš jos maksimumą.</li>
+    <li>Jei pirkinys nepriartina prie pagrindinio tikslo — tai priežastis palaukti.</li>
+    <li>Pirkite tada, kai atsiras konkreti užduotis, kuri atpirks pirkinį.</li>
+  </ul>
+  <p style="margin-bottom:0">Realus pavyzdys iš analizės: užuot iškart pirkus 3D skenerį už €500+, protingiau pradėti nuo to, kas <b>jau yra po ranka</b>, užsidirbti — ir tada įsigyti ką nors rimtesnio. Sutaupyti pinigai — tai pirmosios „pajamos" iš konsultacijos su DI.</p>
+</div>
+
+<nav class="toc">
+  <strong>Turinys</strong>
+  <a href="#kids">🧒 Paprastais žodžiais</a>
+  <a href="#main">Pagrindinė lentelė</a>
+  <a href="#eu">🇪🇺 Kainos ES</a>
+  <a href="#print">🖨️ 3D spausdinimui (smulkmenos)</a>
+  <a href="#figures">🎭 Reitingas figūrėlėms</a>
+  <a href="#duel">⚔️ Seal vs INSPIRE 2 vs POP 4</a>
+  <a href="#extra">🛒 Dar modelių + aksesuarai</a>
+  <a href="#segments">Segmentai</a>
+  <a href="#warn">Išlygos</a>
+  <a href="#rec">Rekomendacija</a>
+  <a href="#src">Šaltiniai</a>
+</nav>
+
+<div class="pick">
+  <h2>🎯 Patarimas: ką imti — Revopoint INSPIRE 2</h2>
+  <p>Jei reikia <b>tikslaus ir nebrangaus</b> skenerio figūrėlėms ir detalėms — tai jis. Tikslumas 0.05 mm (figūrėlėms ir spausdinimui su atsarga), IR lazeris ima tamsų ir blizgų <b>be purškiklio</b>, lengvas (190 g), o dėžutėje jau yra sukamasis stalas ir 200 markerių — primokėti nereikia. Kaina Europoje su pristatymu ES ir PVM — <b>€508</b>.</p>
+  <p style="margin:14px 0 4px">
+    <a class="buybtn" href="https://www.3djake.com/revopoint/inspire-2" target="_blank" rel="noopener">🛒 Pirkti INSPIRE 2 — 3DJake (€508, pristatymas ES) →</a>
+    <a class="buybtn alt" href="https://www.revopoint3d.com/products/infrared-laser-3d-scanner-inspire2" target="_blank" rel="noopener">Ofic. Revopoint →</a>
+  </p>
+  <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">💡 Nori prisipirkti iš karto: purškiklis <a class="src" href="https://www.3djake.com/aesub" target="_blank" rel="noopener">AESUB Diamond (~€20)</a> visiškai blizgioms detalėms — ir komplektas „iki galo" paruoštas (~€530).</p>
+</div>
+
+<h2 id="kids">🧒 Kuo brangus skeneris geresnis už pigų — paprastais žodžiais</h2>
+<p class="sub">Įsivaizduok, kad 3D skeneris — tai fotoaparatas, kuris vietoj įprasto paveikslėlio daro daikto „atspaudą", kad paskui jį būtų galima atspausdinti. Pigus ir brangus daro tą patį, bet skirtingai:</p>
+
+<div class="card green">
+  <h3>✏️ 1. Tikslumas — tai tarsi pieštuko storis</h3>
+  <p>Pigus skeneris piešia <b>storu</b> pieštuku — smulkios detalės susilieja, lyg apvedžiotum monetą riebiu markeriu. Brangus piešia <b>plonu</b> — matosi kiekviena raidelė ir įbrėžimas. Todėl žiedelį ar mažą krumpliaratį gerai nuskenuos tik brangus.</p>
+</div>
+
+<div class="card amber">
+  <h3>🏃 2. Greitis — kaip greita ir lėta kamera</h3>
+  <p>Brangus „fotografuoja" daiktą dešimtis kartų greičiau ir nesusivelia, net jei judini ranka. Pigų reikia vesti lėtai ir kruopščiai, kitaip jis „pameta" daiktą ir tenka pradėti iš naujo.</p>
+</div>
+
+<div class="card blue">
+  <h3>✨ 3. Blizgūs ir juodi daiktai — patys sunkiausi</h3>
+  <p>Blizgus metalas ir juodi daiktai skeneriui — tarsi veidrodis ir tamsa akims: juos sunku „įžiūrėti". Pigus dažnai apskritai nemato tokių paviršių (juos tenka dažyti specialiu purškikliu). Brangus su <b>mėlynu lazeriu</b> mato juos pats.</p>
+</div>
+
+<div class="card green">
+  <h3>📏 4. Ir mažytis, ir didelis</h3>
+  <p>Pigus gerai nuskenuoja ką nors vieną — arba mažą figūrėlę, arba didelę detalę. Brangus moka ir viena, ir kita: nuo varžtelio iki viso staklės.</p>
+</div>
+
+<div class="card amber">
+  <h3>🔌 5. Be laidų ir be kompiuterio</h3>
+  <p>Patys brangiausi veikia patys, kaip telefonas — be laidų ir be nešiojamojo kompiuterio. Su pigiu reikia tampytis kompiuterį ant kabelio.</p>
+</div>
+
+<div class="card blue">
+  <h3>📜 6. „Kokybės sertifikatas" (darbui)</h3>
+  <p>Labai brangūs skeneriai duoda <b>popierių-sertifikatą</b>, kad jų matavimais galima oficialiai pasitikėti — to reikia gamyklose, lėktuvuose, stotyse. Namams ir 3D spausdinimui toks popierius nereikalingas, todėl permokėti nėra prasmės.</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+  <h3>🎯 Išvada vienu sakiniu</h3>
+  <p>Brangus skeneris = <b>tikslesnis, greitesnis, mato blizgų ir tamsų, veikia be laidų ir su kokybės garantija</b>. Bet jei reikia tiesiog nuskenuoti žaislą ar detalę 3D spausdinimui — nebrangaus už €300–450 visiškai pakanka. Mokėti tūkstančius verta tik tada, kai svarbi kiekviena šimtoji milimetro dalis ir oficialus tikslumas.</p>
+</div>
+
+<h2 id="main">Pagrindinė lentelė</h2>
+<p class="sub">Kainos orientacinės, USD (mažmena JAV/ES). ES: +PVM ir distributoriaus antkainis.</p>
+<div class="tablewrap">
+<table id="t">
+<thead><tr>
+  <th>#</th><th>Modelis</th><th>Technologija</th><th>Tikslumas</th>
+  <th>Objekto dydis</th><th>Bevielis</th><th>Kaina USD</th><th>Gamintojas</th><th>Paskirtis</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td class="model">Revopoint Range 2</td><td>Structured light (IR)</td><td>~0.1 mm</td><td>vidutiniai / stambūs / kūnas</td><td>—</td><td class="price">$729</td><td>Revopoint (KLR)</td><td>Biudžetinis, patalpos</td></tr>
+<tr><td>2</td><td class="model">Revopoint MetroX</td><td>Blue Laser</td><td>0.01–0.02 mm</td><td>mid</td><td>—</td><td class="price">$999–1271</td><td>Revopoint (KLR)</td><td>Geriausias value lazeris</td></tr>
+<tr><td>3</td><td class="model">Creality CR-Scan Raptor</td><td>Hybrid: Blue Laser + NIR</td><td>0.02 mm</td><td>5–4000 mm</td><td>—</td><td class="price">~$1167–1400</td><td>Creality (KLR)</td><td>Universalus prozjumeris</td></tr>
+<tr><td>4</td><td class="model">Einstar Vega</td><td>Wireless handheld</td><td>~0.05 mm</td><td>mid / large</td><td>✅</td><td class="price">$1599</td><td>Shining3D (KLR)</td><td>Mobilumas be kabelio</td></tr>
+<tr><td>5</td><td class="model">Creality Raptor Pro</td><td>Hybrid: Blue Laser + NIR</td><td><b>0.01 mm</b></td><td>5–4000 mm</td><td>—</td><td class="price">$1699–1899</td><td>Creality (KLR)</td><td>Top prozjumeris, metalas</td></tr>
+<tr><td>6</td><td class="model">Revopoint MIRACO Plus</td><td>Standalone + fotogrametrija</td><td>metrology-class</td><td>autonomiškai</td><td>✅ be PK</td><td class="price">~$2000+</td><td>Revopoint (KLR)</td><td>Laukas be nešiojamojo</td></tr>
+<tr><td>7</td><td class="model">Shining3D FreeScan UE Pro2</td><td>Blue Laser + VPG</td><td>0.02 mm (volum.)</td><td>large</td><td>✅</td><td class="price">~$5000+</td><td>Shining3D (KLR)</td><td>Pramonės metrologija</td></tr>
+<tr><td>8</td><td class="model">Creaform HandySCAN BLACK|Elite</td><td>Blue Laser metrology</td><td>0.025 mm</td><td>large</td><td>✅</td><td class="price">~$25–50k</td><td>Creaform/AMETEK (Kanada)</td><td>Aviakosmosas, auto QC</td></tr>
+<tr><td>9</td><td class="model">ZEISS T-SCAN hawk 2</td><td>Laser metrology</td><td>atsekamas</td><td>large</td><td>✅</td><td class="price">$50k+</td><td>ZEISS (Vokietija)</td><td>Premium metrologija</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="eu">🇪🇺 Kainos Europoje (EUR, su pristatymu ES)</h2>
+<p class="sub">Realios ES parduotuvės, kainos <b>su PVM</b>, 2026 m. birželis. Geriausias kanalas ES — <b>3DJake</b> (nemokamas pristatymas ES nuo €87,90, sandėlis AT/DE).</p>
+<div class="tablewrap">
+<table id="t2">
+<thead><tr>
+  <th>#</th><th>Modelis</th><th>Kaina EUR (su PVM)</th><th>Parduotuvė (šalis)</th><th>Pristatymas ES</th><th>Nuoroda</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td class="model">Revopoint Range 2</td><td>~€680–730 <b>(nebeparduodamas ES)</b></td><td>3DJake / IGO3D / Botland</td><td>nėra sandėlyje</td><td><a class="src" href="https://www.3djake.com/revopoint/range-2">3djake</a></td></tr>
+<tr><td>2</td><td class="model">Revopoint MetroX</td><td class="price">€1 199 <span style="color:var(--muted);font-weight:400">(reg. €1 499)</span></td><td>Make in Europe (DE)</td><td>taip, ES nuo €50</td><td><a class="src" href="https://www.makeineurope.de/en/products/revopoint-metrox-3d-scanner-advanced-edition">makeineurope</a></td></tr>
+<tr><td>3</td><td class="model">Creality CR-Scan Raptor</td><td class="price">€1 199 <span style="color:var(--muted);font-weight:400">(reg. €1 599)</span></td><td>creality.shop (CZ/DE)</td><td>taip, ES</td><td><a class="src" href="https://www.creality.shop/products/creality-cr-scan-raptor-3d-scanner">creality.shop</a></td></tr>
+<tr><td>4</td><td class="model">Einstar Vega</td><td class="price">€1 935 <span style="color:var(--muted);font-weight:400">(−20%, reg. €2 420)</span></td><td>3DJake (AT/DE)</td><td><b>free nuo €87,90</b></td><td><a class="src" href="https://www.3djake.com/shining-3d/einstar-vega">3djake</a></td></tr>
+<tr><td>5</td><td class="model">Creality Raptor Pro</td><td class="price">€1 899</td><td>creality.shop (CZ/DE)</td><td>taip, ES</td><td><a class="src" href="https://www.creality.shop/products/creality-raptor-pro-3d-scanner">creality.shop</a></td></tr>
+<tr><td>6</td><td class="model">Revopoint MIRACO Plus</td><td class="price">€2 434</td><td>IGO3D (DE)</td><td>taip, ES</td><td><a class="src" href="https://www.igo3d.com/revopoint-3d-scanner-en">igo3d</a></td></tr>
+<tr><td>7</td><td class="model">FreeScan UE Pro2</td><td>~€25 000–30 000 (quote)</td><td>Laserscanning Europe (DE)</td><td>pagal užklausą</td><td><a class="src" href="https://www.laserscanning-europe.com/en/handheld-3d-scanners/shining-3d-freescan-ue-pro2">laserscanning-europe</a></td></tr>
+<tr><td>8</td><td class="model">Creaform HandySCAN BLACK Elite</td><td>~€32 000–38 000 (quote)</td><td>Creaform / distributoriai</td><td>pagal užklausą</td><td><a class="src" href="https://www.creaform3d.com/en/products/portable-3d-scanners/handyscan-3d-pro-series">creaform3d</a></td></tr>
+<tr><td>9</td><td class="model">ZEISS T-SCAN hawk 2</td><td>~€30 000+ (quote)</td><td>ZEISS / distributoriai</td><td>pagal užklausą</td><td><a class="src" href="https://www.zeiss.com/metrology/en/about-us/newsroom/2023/t-scan-hawk-2.html">zeiss</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="card green">
+  <h3>Išvada dėl pirkimo ES</h3>
+  <ul>
+    <li><b>3DJake</b> — geriausias kanalas: nemokamas pristatymas ES nuo €87,90, kainos su 21% PVM, realus ES sandėlis. Ten pat pigus Einstar Vega (€1 935).</li>
+    <li><b>MetroX</b> ir <b>CR-Scan Raptor</b> — paritetas €1 199 (MetroX Make in Europe, Raptor creality.shop).</li>
+    <li><b>Raptor Pro €1 899</b> ir <b>MIRACO Plus €2 434</b> — abu su pristatymu ES.</li>
+    <li>Tiesioginių lietuviškų (.lt) perpardavėjų šiems modeliams nėra — optimalūs 3DJake ir vokiškos parduotuvės.</li>
+  </ul>
+</div>
+<div class="warn">
+  ⚠️ <b>Range 2 ES faktiškai neprieinamas</b> (gyvavimo ciklo pabaiga, pakeitimas į POP 4). Biudžetinis pakaitalas patalpoms — Revopoint POP 4 arba MetroX.
+</div>
+
+<h2 id="print">🖨️ Rankiniai skeneriai smulkių objektų 3D spausdinimui (€270–920)</h2>
+<p class="sub">Vartotojiškas / mėgėjiškas segmentas: figūrėlės, miniatiūros, smulkios detalės, prototipai. Kainos — realios ES parduotuvės (3djake AT, igo3d DE, botland PL), <b>su PVM, pristatymas ES</b>. Spustelėjus stulpelio antraštę rūšiuojama.</p>
+<div class="tablewrap">
+<table id="t3">
+<thead><tr>
+  <th>Modelis</th><th>Technologija</th><th>Tikslumas</th><th>Spalva</th><th>Kaina EUR</th><th>Parduotuvė</th><th>Kam</th>
+</tr></thead>
+<tbody>
+<tr><td class="model">3DMakerpro Seal Lite</td><td>Mėlyna šviesa</td><td>0.02 mm</td><td>mono</td><td class="price">€271</td><td>3djake</td><td>Pigiausias „smulkus"</td></tr>
+<tr><td class="model">Creality CR-Scan Ferret Pro</td><td>Struktūrinė šviesa, one-shot</td><td>0.1 mm</td><td>taip (24-bit)</td><td class="price">€357</td><td>3djake</td><td>Biudžetinis universalus, figūrėlės</td></tr>
+<tr><td class="model">3DMakerpro Mole</td><td>Struktūrinė šviesa, multispektras</td><td>0.05 mm (nuo 15 mm)</td><td>taip</td><td class="price">~€430</td><td>3dmakerpro EU</td><td>Maži–vidutiniai</td></tr>
+<tr><td class="model">3DMakerpro Seal</td><td>Mėlyna šviesa</td><td>0.01–0.02 mm</td><td>taip (24-bit)</td><td class="price">~€440–470</td><td>3djake</td><td>Smulki detalė + spalva</td></tr>
+<tr style="background:rgba(63,185,80,.07)"><td class="model">⭐ Revopoint INSPIRE 2</td><td>IR struktūrinė šviesa + 11 lazerio linijų</td><td>0.05 mm</td><td>taip (RGB)</td><td class="price">€453–565</td><td>botland / igo3d</td><td>Geriausias startas, figūrėlės ir detalės</td></tr>
+<tr><td class="model">Revopoint POP 3 Plus</td><td>IR struktūrinė šviesa</td><td>0.05 mm</td><td>taip</td><td class="price">€558–633</td><td>botland / 3djake</td><td>Vidutinės detalės, figūrėlės</td></tr>
+<tr><td class="model">Revopoint POP 4 <span style="color:var(--muted)">(naujiena)</span></td><td>Hibridas: mėlynas lazeris + IR</td><td>0.03 mm</td><td>taip</td><td class="price">~€690–800</td><td>revopoint3d (išankstinis užsakymas)</td><td>Blizgus/tamsus metalas</td></tr>
+<tr><td class="model">Creality CR-Scan Otter</td><td>Dviejų objektyvų struktūrinė šviesa</td><td><b>0.02 mm</b></td><td>taip (24-bit)</td><td class="price">€781</td><td>3djake</td><td>Smulki detalė + tikslumas</td></tr>
+<tr><td class="model">Shining3D Einstar</td><td>IR VCSEL struktūrinė šviesa</td><td>0.1 mm</td><td>taip (RGB)</td><td class="price">~€799</td><td>einstar EU</td><td>Vidutiniai/stambūs (ne smulkmenos)</td></tr>
+<tr><td class="model">Revopoint MINI 2</td><td>Mėlyna struktūrinė šviesa</td><td><b>0.02 mm</b> (nuo 10 mm)</td><td>taip</td><td class="price">€917</td><td>igo3d</td><td>Juvelyrika, miniatiūros</td></tr>
+</tbody>
+</table>
+</div>
+<div class="warn">
+<b>Pastabos (2026 m. birželis):</b>
+<ul>
+  <li><b>INSPIRE 1</b> ir <b>POP 3</b> (ne Plus) nuimti → pakeisti į <b>INSPIRE 2</b> ir <b>POP 3 Plus</b>. Iš Ferret aktualus tik <b>Ferret Pro</b>.</li>
+  <li><b>Einstar</b> esant 0.1 mm pralaimi Otter ir Mini 2 (0.02 mm) už panašią kainą — smulkmenoms nenaudinga.</li>
+  <li><b>Seal Lite</b> — tik mono tekstūra (geometrija tiksli, pilnos spalvos nėra).</li>
+  <li>Stalinių turntable (<b>SOL / Matter and Form</b>) smulkmenoms spausdinimui nerekomenduoju — lėtesni, prastesni esant sudėtingai geometrijai, ES traukiasi iš rinkos.</li>
+</ul>
+</div>
+<h3>TOP 3 smulkių objektų 3D spausdinimui</h3>
+<div class="card green">
+  <p>💰 <b>Pigiausias darbinis — Creality CR-Scan Ferret Pro (€357):</b> spalvotas, paprastas, realiai ima figūrėles. Dar pigiau — Seal Lite €271 (bet mono tekstūra).</p>
+  <p>⭐ <b>Geriausias balansas — Revopoint INSPIRE 2 (€453 botland):</b> 0.05 mm, RGB spalva, lazeris + struktūrinė šviesa, atleidžia blizgesį ir tamsius paviršius.</p>
+  <p>🔬 <b>Smulkiausia detalizacija — Revopoint MINI 2 (€917):</b> mėlyna šviesa, 0.02 mm, objektai nuo 10 mm (juvelyrika/miniatiūros). To paties tikslumo alternatyvos — Otter €781 / Seal €440.</p>
+</div>
+
+<h2 id="figures">🎭 Kuris skeneris geriausias figūrėlių spausdinimui — reitingas</h2>
+<p class="sub">Vertinimas pagal tai, kas svarbu būtent figūrėlėms ir miniatiūroms: smulki detalizacija, spalva (jei figūrėlė nudažyta), paprastumas pradedančiajam ir kaina. Žvaigždutės: ★ = blogiau, ★★★★★ = puiku. Ženklas dešinėje — trumpas verdiktas.</p>
+<div class="tablewrap">
+<table id="t4">
+<thead><tr>
+  <th>Skeneris</th><th>🎯 Detalizacija</th><th>🎨 Figūrėlės spalva</th><th>👍 Paprastumas</th><th>💶 Kaina</th><th class="srchcol">Verdiktas</th>
+</tr></thead>
+<tbody>
+<tr style="background:rgba(63,185,80,.07)">
+  <td class="model">Revopoint INSPIRE 2 <span style="color:var(--muted)">€453</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td class="badge">🥇<span class="verdict">geriausias pasirinkimas</span></td>
+</tr>
+<tr>
+  <td class="model">Revopoint MINI 2 <span style="color:var(--muted)">€917</span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★<span class="off">★★★</span></span></td>
+  <td class="badge">🔬<span class="verdict">miniatiūroms</span></td>
+</tr>
+<tr>
+  <td class="model">Creality CR-Scan Ferret Pro <span style="color:var(--muted)">€357</span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td class="badge">💰<span class="verdict">biudžeto pasirinkimas</span></td>
+</tr>
+<tr>
+  <td class="model">Revopoint POP 4 <span style="color:var(--muted)">~€690</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td class="badge">👍<span class="verdict">universalus</span></td>
+</tr>
+<tr>
+  <td class="model">Creality CR-Scan Otter <span style="color:var(--muted)">€781</span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td class="badge">👍<span class="verdict">tikslumas+</span></td>
+</tr>
+<tr>
+  <td class="model">Revopoint POP 3 Plus <span style="color:var(--muted)">€558</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td class="badge">👍<span class="verdict">geras</span></td>
+</tr>
+<tr>
+  <td class="model">3DMakerpro Seal <span style="color:var(--muted)">~€450</span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td class="badge">👍<span class="verdict">detaliai+spalva</span></td>
+</tr>
+<tr>
+  <td class="model">3DMakerpro Seal Lite <span style="color:var(--muted)">€271</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★<span class="off">★★★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td class="badge">⚠️<span class="verdict">be spalvos</span></td>
+</tr>
+<tr>
+  <td class="model">Shining3D Einstar <span style="color:var(--muted)">~€799</span></td>
+  <td><span class="stars">★★<span class="off">★★★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★<span class="off">★★★</span></span></td>
+  <td class="badge">👎<span class="verdict">ne smulkmenoms</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="card green">
+  <h3>Kam ką imti figūrėlėms</h3>
+  <ul>
+    <li>🥇 <b>Nori geriausio rezultato be galvos skausmo — Revopoint INSPIRE 2 (€453).</b> Spalvotas skenas, pagauna veidus ir drabužių klostes, atleidžia blizgesį, paprastas pradedančiajam. Idealus figūrėlėms 10–30 cm.</li>
+    <li>💰 <b>Nori pigiau ir tiesiog išbandyti — Creality CR-Scan Ferret Pro (€357).</b> Spalvotas, lengvas, bet smulkesnes detales sulieja — stambioms figūroms ok, miniatiūroms silpnokas.</li>
+    <li>🔬 <b>Skenuoji mažytes miniatiūras (vargeimas, juvelyrika) — Revopoint MINI 2 (€917).</b> Mato smulkiausią detalę, bet brangesnis ir kaprizingesnis darbe.</li>
+    <li>⚠️ <b>Neimk Seal Lite, jei figūrėlė nudažyta</b> — jis tiksliai nuskenuoja formą, bet be pilnaspalvės tekstūros (tik pilkas „atspaudas").</li>
+    <li>👎 <b>Einstar figūrėlėms netinka</b> — jis pritaikytas stambiems objektams, smulkmenas sulieja.</li>
+  </ul>
+</div>
+
+<h2 id="duel">⚔️ Seal vs INSPIRE 2 vs POP 4 — detalus palyginimas</h2>
+<p class="sub">Trys artimo segmento modeliai, bet <b>skirtinga filosofija</b>: Seal — itin tikslus mėlynos šviesos su 24-bit spalva (forma+spalva smulkmenoms); INSPIRE 2 — lengvas universalus su IR lazeriu; <b>POP 4</b> — naujas „5-in-1" hibridas su galingu mėlynu lazeriu (universalus atnaujinimas, išankstinis užsakymas).</p>
+
+<div class="card blue">
+  <h3>🆕 Kas yra Revopoint POP 4 „5-in-1"</h3>
+  <p>Penki skenavimo režimai viename prietaise — skirtingoms užduotims:</p>
+  <ol>
+    <li><b>Full-Field HD</b> — struktūrinė šviesa, maksimali detalizacija</li>
+    <li><b>VCSEL Rapid</b> — greitas IR, veikia net lauke (iki 100 000 lux)</li>
+    <li><b>Hybrid HD</b> — dvigubas projektorius: greitai + kokybiškai</li>
+    <li><b>30 Cross Blue Laser Lines</b> — 30 mėlynų linijų tamsiems/blizgiems paviršiams</li>
+    <li><b>Single-Line Deep Hole</b> — viena mėlyna linija grioveliams ir giliems angoms</li>
+  </ol>
+  <p style="margin-bottom:0"><b>Statusas:</b> Kickstarter baigtas (2026 m. gegužė), išankstinių užsakymų išsiuntimas nuo <b>2026 m. birželio 22 d.</b> ES mažmenoje (3djake/igo3d) kol kas nėra — kainos orientyras <b>~€750–850</b> su PVM (MSRP $919, išankstinis užsakymas ~$755).</p>
+</div>
+
+<div class="tablewrap">
+<table id="t5">
+<thead><tr><th>Parametras</th><th>3DMakerpro Seal</th><th>Revopoint INSPIRE 2</th><th>Revopoint POP 4 🆕</th></tr></thead>
+<tbody>
+<tr><td>Technologija</td><td>Mėlyna šviesa (structured)</td><td>IR structured + 11-lin. IR lazeris</td><td><b>5-in-1:</b> 30 mėlynų lazerio linijų + IR VCSEL + full-field</td></tr>
+<tr><td>Tikslumas (single-frame)</td><td><b>0.01 mm</b></td><td>iki 0.05 mm</td><td>0.03 mm (lazeris) / 0.08 (full-field)</td></tr>
+<tr><td>Min. objektas / diapazonas</td><td>~10–300 mm</td><td>nuo 20×20×20 mm, iki 2 m</td><td>nuo 10×10×10 mm, iki 2×2×2 m</td></tr>
+<tr style="background:rgba(63,185,80,.08)"><td>🎨 Spalva / tekstūra</td><td><b>24-bit kamera</b>, 1 praėjimas</td><td>RGB, 1 praėjimas</td><td>RGB 1.3 MP, 1 praėjimas</td></tr>
+<tr><td>Greitis</td><td>10 fps / 100 tūkst. tšk./s</td><td>iki 30 fps</td><td><b>iki 5 mln. taškų/s</b>, lazeris iki 105 fps</td></tr>
+<tr><td>Tamsus / blizgus</td><td>paprastai reikia purškiklio</td><td>lazeris be purškiklio</td><td><b>30 mėlynų lazerio linijų — geriausiai be purškiklio</b></td></tr>
+<tr><td>Autonomija</td><td>reikia PK</td><td>reikia PK/telefono</td><td>iš dalies telefonas, bet lazeris — per PK per WiFi</td></tr>
+<tr><td>Programa / eksportas</td><td>JMStudio — OBJ/STL/PLY/ASC</td><td>Revo Scan 5 — STL/OBJ/PLY/FBX/3MF/GLTF</td><td>Revo Scan — +3MF/glTF/FBX/Splat(3DGS)</td></tr>
+<tr><td>Kaina ES (su PVM)</td><td class="price">€473</td><td class="price">€508</td><td class="price">~€750–850 (išankstinis užsakymas)</td></tr>
+<tr><td>Prieinamumas</td><td>✅ parduodamas</td><td>✅ parduodamas</td><td>⏳ išankstinis užsakymas, išsiuntimas nuo 2026.06.22</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>🎨 „Ar skeneris iškart susieja spalvą?" — taip, abu. Bet kiek tai svarbu?</h3>
+<div class="card amber">
+  <p><b>Kaip tai veikia:</b> abu turi įmontuotą spalvotą kamerą, ir spalva (tekstūra) „užklijuojama" ant 3D formos <b>automatiškai vienu praėjimu</b> — atskiros kameros pirkti nereikia. Išeigoje modelis ne tik reikiamos formos, bet ir su figūrėlės nudažymu.</p>
+  <p><b>Bet spalvos reikia NE visada:</b></p>
+  <ul>
+    <li>🟢 <b>Spalva SVARBI, jei</b> nori: skaitmeninę nudažytos figūrėlės kopiją „kaip yra" (archyvui, renderingui, rodymui ekrane, Blender), arba spausdinimą <b>spalvotu</b> 3D spausdintuvu. Tada graži tekstūra — pusė rezultato.</li>
+    <li>⚪ <b>Spalvos NEREIKIA, jei</b> spausdini įprastu vienspalviu plastiku (PLA/derva) ir figūrėlę dažai teptuku pats. Spausdintuvui svarbi tik <b>forma</b> (geometrija), tekstūros jis vis tiek nespausdina — spalva tiesiog „dėl grožio" ekrane.</li>
+  </ul>
+  <p><b>Pagal spalvos kokybę Seal stipresnis:</b> 24-bit kamera + geometrija 0.01 mm = tanki, švari, tiksli tekstūra ant nudažytos miniatiūros. INSPIRE 2 spalva irgi yra ir normali, bet tai antraeilė funkcija — gamintojas akcentą deda ant lazerio ir geometrijos, o ne ant spalvos.</p>
+</div>
+
+<div class="card green">
+  <h3>🏁 Ką pasirinkti</h3>
+  <ul>
+    <li>🎨 <b>Reikia GEROS nudažytos figūrėlės spalvos → 3DMakerpro Seal (€473).</b> 24-bit kamera + tikslumas 0.01 mm = geriausias pilnaspalvis rezultatas smulkmenoms. Minusas: nėra stalo/markerių dėžutėje; tamsus/glianas trukdo spalvai (purškiklis).</li>
+    <li>📐 <b>Lengvas ir pigesnis, svarbi forma → Revopoint INSPIRE 2 (€508).</b> Lazeris ima tamsų/blizgų be purškiklio, pilnas komplektas (stalas + 200 markerių), 190 g. Bet tikslumas žemesnis nei Seal, lazeris silpnesnis nei POP 4.</li>
+    <li>🆕 <b>Reikia universalaus ilgiems metams → Revopoint POP 4 (~€750–850, laukti tiekimo).</b> 30 mėlynų lazerio linijų muša tamsų/blizgų geriausiai, greiti režimai, objektai nuo 10 mm iki 2 m. Aiškus atnaujinimas prieš INSPIRE 2. Minusai: brangesnis, ne visiškai autonomiškas, ES kol kas išankstinis užsakymas.</li>
+  </ul>
+  <p style="margin-bottom:0"><b>Trumpai:</b> Seal — „figūrėlės fotografas" (forma + spalva puikiai); INSPIRE 2 — „lengvas darbinis arkliukas formai"; POP 4 — „šveicariškas peilis": brangesnis ir reikia laukti, bet vienas prietaisas bet kokioms užduotims (detalės + blizgesys + dydis + greitis).</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+  <h3>💬 Mano išvada dėl POP 4</h3>
+  <p><b>Grynai figūrėlėms POP 4 — permoka.</b> Jei užduotis tik skenuoti figūrėles ir smulkias detales spausdinimui — Seal (dėl spalvos/detalizacijos) arba INSPIRE 2 (dėl lengvumo ir kainos) padarys tą patį, pigiau ir jau dabar, be laukimo ES tiekimo.</p>
+  <p style="margin-bottom:0"><b>POP 4 imamas dėl universalumo:</b> jei be figūrėlių skenuosi blizgų metalą, tamsias detales, stambius objektus iki 2 m ir reikia greičio — tai geriausias pasirinkimas iš trijų, pateisinantis kainą ir laukimą. Atvirkštinės inžinerijos užduotims su metalu POP 4 įdomesnis už Seal būtent dėl mėlyno lazerio. Patarimas: palauk, kol pasirodys ES mažmenoje (3djake/igo3d) su vietine garantija, neimk tiesiai iš Kickstarter.</p>
+</div>
+
+<h2 id="extra">🛒 Papildomai: dar modelių, aksesuarų ir programų (ES sandėlis)</h2>
+<p class="sub">Kas dar realiai įvežama į ES su pristatymu ES, plius reikmenys, be kurių skeneris ant blizgaus/tamsaus bevertis. Kainos orientacinės, 2026 m. birželis.</p>
+
+<h3>Kiti skeneriai su ES sandėliu (profesionalų segmentas)</h3>
+<div class="tablewrap">
+<table id="t6">
+<thead><tr><th>Modelis</th><th>Prekės ženklas</th><th>Tipas</th><th>Tikslumas</th><th>Spalva</th><th>Kaina EUR</th><th>Kur</th></tr></thead>
+<tbody>
+<tr><td class="model">iReal 2E</td><td>Scantech</td><td>Rankinis, IR VCSEL</td><td>iki 0.1 mm</td><td>taip</td><td class="price">nuo ~€3 980</td><td><a class="src" href="https://center3dprint.com/3d-scanner-scantech-ireal-2e-color">center3dprint</a></td></tr>
+<tr><td class="model">Fisher Handheld</td><td>Thunk3D</td><td>Struktūrinė šviesa</td><td>~0.04 mm</td><td>taip</td><td>pagal užklausą</td><td><a class="src" href="https://center3dprint.com/en/shop/3d-scanners/thunk3d-fisher-handheld-3d-scanner">center3dprint</a></td></tr>
+<tr><td class="model">JS500 (juvelyrinis)</td><td>Thunk3D</td><td>Stalinis, 5–80 mm</td><td>10 µm</td><td>taip</td><td class="price">~€5 100</td><td><a class="src" href="https://pro3dshop.com/products/thunk3d-jewellery-scanner">pro3dshop</a></td></tr>
+<tr><td class="model">RangeVision Smart</td><td>RangeVision ⚠️</td><td>Stalinis, struktūrinė šviesa</td><td>~0.07 mm</td><td>taip</td><td class="price">nuo €2 299</td><td><a class="src" href="https://www.sarras-shop.com/en/3D-Scanner/">sarras-shop</a></td></tr>
+<tr><td class="model">Calibry Mini</td><td>Thor3D ⚠️</td><td>Rankinis, smulk./vidut.</td><td>iki 0.07 mm</td><td>taip</td><td class="price">€6 990</td><td><a class="src" href="https://thor3dscanner.com/en/buy/">thor3dscanner</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="sub">⚠️ RangeVision ir Thor3D — rusiški prekės ženklai (sandėlis Austrijoje). Pristatant ES galimi sankcijų/garantijų rizikai — atsižvelk.</p>
+
+<h3>🧴 Aksesuarai ir reikmenys (3DJake, kainos su PVM)</h3>
+<div class="tablewrap">
+<table id="t7">
+<thead><tr><th>Prekė</th><th>Paskirtis</th><th>Kaina EUR</th><th>Kur</th></tr></thead>
+<tbody>
+<tr><td class="model">AESUB Diamond 200 ml</td><td>Itin greitai išgaruojantis purškiklis (~10 min)</td><td class="price">€20.16</td><td><a class="src" href="https://www.3djake.com/aesub">3djake</a></td></tr>
+<tr><td class="model">AESUB Blue 400 ml</td><td>Išgaruojantis matinis (~1–2 h)</td><td class="price">€33.26</td><td><a class="src" href="https://www.3djake.com/aesub/blue-scanning-spray">3djake</a></td></tr>
+<tr><td class="model">AESUB White 400 ml</td><td>Atsparus matinis (reikia nuplauti)</td><td class="price">€16.12</td><td><a class="src" href="https://www.3djake.com/aesub">3djake</a></td></tr>
+<tr><td class="model">Revopoint Dual Axis Turntable</td><td>Dviašis auto stalas mažoms figūrėlėms</td><td class="price">~€99</td><td><a class="src" href="https://www.3djake.com/revopoint/dual-axis-turntable">3djake</a></td></tr>
+<tr><td class="model">3DMakerpro Multi-axis Turntable</td><td>Auto stalas Seal</td><td class="price">~€150</td><td><a class="src" href="https://www.3djake.com/3dmakerpro/multi-axis-turntable">3djake</a></td></tr>
+<tr><td class="model">3DMakerpro Basic Turntable</td><td>Paprastas 360° stalas (be auto sinchro)</td><td class="price">~€18</td><td><a class="src" href="https://www.3djake.com/3dmakerpro/basic-turntable">3djake</a></td></tr>
+<tr><td class="model">Revopoint Calibration Board</td><td>Kalibravimo plokštė</td><td class="price">~€43</td><td><a class="src" href="https://www.3djake.com/revopoint/large-calibration-board-kit">3djake</a></td></tr>
+<tr><td class="model">Revopoint Reference Markers</td><td>Markeriai/taikiniai sekimui</td><td class="price">~€24</td><td><a class="src" href="https://www.3djake.com/revopoint">3djake</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>📱 Skenavimas telefonu — nemokamos programos</h3>
+<div class="card amber">
+  <ul>
+    <li><b>KIRI Engine</b> (iOS/Android/Web) — fotogrametrija + NeRF, eksportas be paywall nemokamame tiere. <b>Geriausias nemokamas variantas stambioms figūrėlėms spausdinimui.</b></li>
+    <li><b>Polycam</b> — greitas ir patogus, bet pilnas eksportas su prenumerata.</li>
+    <li><b>Scaniverse</b> (nemokamas) — vietinis apdorojimas, greitas, bet prastesnis ant lygių objektų.</li>
+    <li><b>RealityScan</b> (Epic) — aukštas poligonų skaičius, bet silpnas ant lygių/vienspalvių paviršių.</li>
+  </ul>
+  <p style="margin-bottom:0">⚠️ Smulkioms detalėms (&lt;50 mm) telefonas <b>pralaimi bet kuriam</b> struktūrinės šviesos skeneriui. Miniatiūroms — tik tikras skeneris.</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+  <h3>💬 Mano išvada dėl papildomos produkcijos</h3>
+  <p><b>Kas realiai verta dėmesio:</b></p>
+  <ul>
+    <li>🧴 <b>Purškiklis AESUB Diamond (~€20) — beveik privalomas.</b> Be jo blizgaus metalo ir tamsaus plastiko neįmanoma nuskenuoti jokiu biudžetiniu skeneriu. Diamond išgaruoja per 10 minučių — nereikia nuplauti. Tai pirmas dalykas, kurį prisipirkti kartu su skeneriu.</li>
+    <li>🔄 <b>Sukamasis stalas figūrėlėms.</b> Revopoint — Dual Axis (~€99), Seal — Multi-axis (~€150). Stipriai supaprastina smulkių objektų skenavimą ir kelia kokybę. Pigų Basic už €18 imti tik „išbandyti".</li>
+    <li>🎯 <b>Markeriai (~€24) + kalibravimo plokštė (~€43)</b> — kapeikinis rinkinys, kuris pastebimai pagerina sekimą ant vienalyčių paviršių.</li>
+    <li>📐 <b>Scantech iReal 2E (~€3 980)</b> — vienintelis iš „papild. profi", kurį verta svarstyti, jei užduotys peraugs mėgėjišką lygį (biustai, korpusai, atvirkštinė inžinerija). Profesionalesnis nei MIRACO, bet ir trigubai brangesnis.</li>
+  </ul>
+  <p><b>Ką praleisti:</b> Thunk3D Fisher S, Thor3D Calibry, RangeVision PRO — tai €5 000–11 000, perteklinis figūrėlėms. Plius Thor3D ir RangeVision — rusiški prekės ženklai: sankcijų ir garantijų rizikos pristatant ES, geriau nesivelti. Telefono programos — tik stambiems objektams, smulkmenoms jos neįkanda.</p>
+  <p style="margin-bottom:0"><b>Galutinis komplektas „figūrėlės iki galo" su pristatymu ES:</b> Revopoint INSPIRE 2 (€508, komplekte jau su stalu ir markeriais) <i>arba</i> 3DMakerpro Seal (€473, jei svarbi spalva) + AESUB Diamond (€20) + (Seal) sukamasis stalas (€150). Biudžetas ~€530–650 — ir uždaro 95% figūrėlių užduočių.</p>
+</div>
+
+<h2 id="segments">Analizė pagal segmentus</h2>
+
+<div class="card green">
+  <h3><span class="pill seg-green">Biudžetas</span> iki $1 000</h3>
+  <ul>
+    <li><b>Revopoint Range 2 ($729)</b> — stambūs objektai ir patalpos, tikslumas ~0.1 mm. Kambario/konstrukcijos geometriją nuskenuos, precizinę detalę — ne.</li>
+    <li><b>Revopoint MetroX ($999)</b> — mėlynas lazeris iki 0.01 mm. Geriausia kaina/tikslumas smulkioms ir vidutinėms detalėms.</li>
+  </ul>
+</div>
+
+<div class="card amber">
+  <h3><span class="pill seg-amber">Prozjumeris</span> ≈$1 200–1 900 — darbinė zona tavo užduotims</h3>
+  <ul>
+    <li><b>Creality CR-Scan Raptor (~$1 200)</b> — hibridas: mėlynas lazeris (tikslumas, tamsus metalas) + NIR struktūrinė šviesa (greitas stambių formų fiksavimas). 5–4000 mm uždaro ir varžtą, ir agregatą.</li>
+    <li><b>Creality Raptor Pro ($1 899)</b> — 0.01 mm lazeriu, geresnis sekimas ant metalo, greitesnis. 372 g, dėklas, kalibravimo plokštė ir markeriai komplekte.</li>
+    <li><b>Einstar Vega ($1 599)</b> — bevielis, patogu dirbti aplink įrangą be kabelio iki PK.</li>
+  </ul>
+</div>
+
+<div class="card blue">
+  <h3><span class="pill seg-blue">Pramonės metrologija</span> $5k+</h3>
+  <p>FreeScan UE Pro2, Creaform HandySCAN, ZEISS T-SCAN hawk 2 — atsekamas (sertifikuojamas) tikslumas, fotogrametrija dideliems tūriams. Skyriaus/įmonės biudžetas, ne asmeninis pirkinys.</p>
+</div>
+
+<h2 id="warn">⚠️ Svarbios išlygos (iš apžvalgų)</h2>
+<div class="warn">
+<ol>
+  <li><b>Tikslumas ≠ preciziškumas.</b> Deklaruoti 0.01–0.02 mm — idealiu atveju. Praktiškai taškų debesis pas prozjumerius „triukšmauja": plokštuma meše atrodo šiurkšti. CAD reversui kritiška — testuok ant realios detalės prieš pirkimą.</li>
+  <li><b>Tamsus metalas ir matiniai paviršiai.</b> Mėlynas lazeris (Raptor / MetroX / FreeScan) susidoroja geriau nei struktūrinė šviesa. Nerūdijančiam plienui/dažytam metalui — lazerio režimai.</li>
+  <li><b>Markeriai.</b> Stambiems objektams reikia reflective markers (komplekte Raptor Pro). Be jų sekimas plaukioja ant vienalyčių paviršių.</li>
+  <li><b>Objekto dydis.</b> Preciziškumas krenta didėjant objektui (volumetric accuracy). Varžtas ir reaktorius — skirtingi režimai.</li>
+  <li><b>Programa.</b> Creality Scan / Revopoint Studio / Shining3D EXStar. Patikrink eksportą į STEP/STL tolesniam CAD.</li>
+</ol>
+</div>
+
+<h2 id="rec">💡 Rekomendacija pagal taikymą</h2>
+<div class="tablewrap">
+<table class="rec">
+<tbody>
+<tr><td>Atvirkštinė detalių/mazgų inžinerija (metalas, tikslumas)</td><td>Creality Raptor Pro — $1 899</td></tr>
+<tr><td>Griežtas biudžetas, detalės vidutinės</td><td>Revopoint MetroX — $999</td></tr>
+<tr><td>Patalpų, stambių konstrukcijų matavimai</td><td>Revopoint Range 2 — $729</td></tr>
+<tr><td>Laukas, aplink įrangą be nešiojamojo</td><td>Einstar Vega ($1 599) / MIRACO Plus ($2 000+)</td></tr>
+<tr><td>Sertifikuojama metrologija skyriui</td><td>Creaform / ZEISS (įmonės biudžetas)</td></tr>
+</tbody>
+</table>
+</div>
+<details>
+  <summary>Galutinė išvada</summary>
+  <p>Asmeniniam/skyriaus įrankiui optimumas — <b>Creality Raptor Pro</b>: mėlynas lazeris metalui, 0.01 mm, diapazonas detalei ir agregatui, markeriai ir dėklas komplekte, ~$1 900. Atsarginis taupymo variantas — <b>Revopoint MetroX</b> už dvigubai mažiau su panašiu lazerio tikslumu smulkmenoms.</p>
+</details>
+
+<h2 id="src">Šaltiniai</h2>
+<div class="srcs">
+  <a class="src" href="https://store.creality.com/products/creality-raptor-pro-3d-scanner">Creality Raptor Pro — ofic. parduotuvė</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/creality-cr-scan-raptor-review/">CR-Scan Raptor Review 2026</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/creality-raptor-pro-3d-scanner-review/">Raptor Pro Review 2026</a><br>
+  <a class="src" href="https://makezine.com/article/digital-fabrication/3d-printing-workshop/review-creality-raptor-pro-3d-scanner/">Raptor Pro Review — Make:</a><br>
+  <a class="src" href="https://the-gadgeteer.com/2025/09/11/creality-raptor-pro-3d-scanner-review-great-in-theory-not-so-great-in-reality/">Raptor Pro — The Gadgeteer</a><br>
+  <a class="src" href="https://3dprinting.com/scanners/best-professional-3d-scanners/">Best Professional 3D Scanners 2026</a><br>
+  <a class="src" href="https://www.barchart.com/story/news/1456938/top-7-reliable-industrial-3d-scanners-for-metrology-qc-2026-buyers-guide">Top 7 Industrial Scanners 2026</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/best-3d-scanner-for-reverse-engineering/">Best for Reverse Engineering 2026</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/revopoint-metrox-review/">Revopoint MetroX Review 2026</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/einstar-vega-3d-scanner-review/">Einstar Vega Review 2026</a><br>
+  <a class="src" href="https://swiftwand.com/en/handheld-3d-scanner-buying-guide-2026-en/">Handheld Buying Guide 2026</a><br>
+</div>
+
+<div class="intro" style="border-color:var(--accent2);text-align:center">
+  <h2 style="color:var(--accent2)">💼 Reikia tokios pat analizės jūsų užduočiai?</h2>
+  <p>Ši apžvalga surinkta su DI pagalba per valandas, o ne savaites. Taip galima išanalizuoti bet kokį pasirinkimą — įrangą, programinę įrangą, techniką, paslaugą: rasti variantus, palyginti, suskaičiuoti realias kainas ir sąžiningai pasakyti, ar apskritai verta leisti pinigus.</p>
+  <p style="margin-bottom:0">
+    <a class="buybtn" href="https://visaginas360.com" target="_blank" rel="noopener">Užsisakyti analizę savo užduočiai →</a>
+    <a class="buybtn alt" href="https://visaginas360.com" target="_blank" rel="noopener">Išmokti daryti taip pačiam →</a>
+  </p>
+</div>
+
+<footer>Sugeneruota su DI pagalba · 2026-06-17 · <a class="src" href="https://visaginas360.com" target="_blank" rel="noopener">visaginas360.com</a> · kainos orientacinės, prieš pirkdami pasitikrinkite pas distributorių ES</footer>
+</div>
+
+<div class="copyhint" id="hint">Nukopijuota ✓</div>
+
+<script>
+// добавить 2 колонки поиска (Google + YouTube) в конец каждой таблицы
+function addSearchCols(tableId){
+  const table=document.getElementById(tableId);
+  if(!table)return;
+  const htr=table.querySelector('thead tr');
+  ['🔍','▶'].forEach((ic,k)=>{
+    const th=document.createElement('th');
+    th.className='srchcol'; th.textContent=ic;
+    th.title=k===0?'Google':'YouTube';
+    htr.appendChild(th);
+  });
+  table.querySelectorAll('tbody tr').forEach(tr=>{
+    const m=tr.querySelector('td.model');
+    const name=m?m.innerText.replace(/[⭐🔬💰]/g,'').replace(/\(.*?\)/g,'').trim():'';
+    const qg=encodeURIComponent(name+' 3D scanner price EU buy Europe');
+    const qy=encodeURIComponent(name+' 3D scanner review');
+    const tdG=document.createElement('td'); tdG.className='srchcol';
+    tdG.innerHTML='<a class="srch" target="_blank" rel="noopener" title="Google (EU): '+name+'" href="https://www.google.com/search?q='+qg+'&gl=lt&hl=en">🔍</a>';
+    const tdY=document.createElement('td'); tdY.className='srchcol';
+    tdY.innerHTML='<a class="srch" target="_blank" rel="noopener" title="YouTube: '+name+'" href="https://www.youtube.com/results?search_query='+qy+'">▶</a>';
+    tr.appendChild(tdG); tr.appendChild(tdY);
+  });
+}
+addSearchCols('t'); addSearchCols('t2'); addSearchCols('t3');
+// таблица фигурок: название -> Google-поиск с ценой (где купить)
+document.querySelectorAll('#t4 tbody td.model').forEach(td=>{
+  const name=td.innerText.replace(/[⭐🔬💰]/g,'').replace(/~?€\S+/g,'').replace(/\(.*?\)/g,'').trim();
+  if(!name)return;
+  const a=document.createElement('a');
+  a.href='https://www.google.com/search?q='+encodeURIComponent(name+' 3D scanner price EU buy Europe kaina')+'&gl=lt&hl=en';
+  a.target='_blank'; a.rel='noopener';
+  a.title='Rasti „'+name+'" kainą Europoje (Google)';
+  a.innerHTML=td.innerHTML;
+  td.innerHTML=''; td.appendChild(a);
+});
+// copy-on-click для ячеек таблиц (клик по ссылке -> переход, не копирование)
+document.querySelectorAll('td').forEach(td=>{
+  td.addEventListener('click',(e)=>{
+    if(e.target.closest('a'))return;
+    const t=td.innerText.trim(); if(!t)return;
+    navigator.clipboard.writeText(t).then(()=>{
+      const h=document.getElementById('hint');
+      h.textContent='Nukopijuota: '+(t.length>40?t.slice(0,40)+'…':t)+' ✓';
+      h.classList.add('show'); setTimeout(()=>h.classList.remove('show'),1200);
+    });
+  });
+});
+// сортировка по клику на заголовок (для обеих таблиц)
+function makeSortable(tableId){
+document.querySelectorAll('#'+tableId+' th').forEach((th,i)=>{
+  let asc=true;
+  th.addEventListener('click',()=>{
+    const tb=document.querySelector('#'+tableId+' tbody');
+    const rows=[...tb.rows];
+    rows.sort((a,b)=>{
+      const x=a.cells[i].innerText.replace(/[^0-9.,]/g,'').replace(',','');
+      const y=b.cells[i].innerText.replace(/[^0-9.,]/g,'').replace(',','');
+      const nx=parseFloat(x),ny=parseFloat(y);
+      if(!isNaN(nx)&&!isNaN(ny))return asc?nx-ny:ny-nx;
+      return asc?a.cells[i].innerText.localeCompare(b.cells[i].innerText)
+               :b.cells[i].innerText.localeCompare(a.cells[i].innerText);
+    });
+    asc=!asc; rows.forEach(r=>tb.appendChild(r));
+  });
+});
+}
+makeSortable('t'); makeSortable('t2'); makeSortable('t3'); makeSortable('t4'); makeSortable('t6'); makeSortable('t7');
+</script>
+</body>
+</html>

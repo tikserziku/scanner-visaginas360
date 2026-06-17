@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D-сканеры — цена / качество / производитель (2026)</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --border:#2d333b;
+    --txt:#e6edf3; --muted:#9aa6b2; --accent:#58a6ff; --accent2:#3fb950;
+    --amber:#d29922; --blue:#388bfd; --red:#f85149;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;padding:0 0 80px}
+  header{background:linear-gradient(135deg,#161b22,#1c2230);
+    border-bottom:1px solid var(--border);padding:32px 24px;position:relative}
+  h1{margin:0 0 6px;font-size:1.7rem}
+  .sub{color:var(--muted);font-size:.95rem}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  h2{margin:38px 0 14px;font-size:1.3rem;border-left:4px solid var(--accent);padding-left:12px}
+  h3{margin:24px 0 10px;font-size:1.08rem;color:var(--accent)}
+  /* TOC */
+  nav.toc{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:16px 20px;margin:24px 0}
+  nav.toc strong{display:block;margin-bottom:8px;color:var(--muted);font-size:.8rem;
+    text-transform:uppercase;letter-spacing:.05em}
+  nav.toc a{color:var(--accent);text-decoration:none;margin-right:18px;font-size:.92rem;
+    display:inline-block;padding:2px 0}
+  nav.toc a:hover{text-decoration:underline}
+  /* table */
+  .tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:16px 0}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:760px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  th{background:var(--panel2);position:sticky;top:0;cursor:pointer;user-select:none;
+    font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  th:hover{color:var(--txt)}
+  tbody tr:hover{background:#1a2030}
+  td.model{font-weight:600;color:var(--txt)}
+  a.srch{display:inline-block;text-decoration:none;font-size:1.05rem;line-height:1;
+    padding:3px 7px;border-radius:6px;border:1px solid var(--border);background:var(--panel2)}
+  a.srch:hover{border-color:var(--accent);background:#23314a}
+  th.srchcol{text-align:center;width:42px}
+  td.srchcol{text-align:center}
+  td.model a{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(88,166,255,.6)}
+  td.model a:hover{border-bottom:1px solid var(--accent)}
+  td.model a::after{content:" 🔍";font-size:.7em;opacity:.6}
+  .stars{color:#e3b341;letter-spacing:1px;white-space:nowrap}
+  .stars .off{color:#3a4150}
+  td.badge{font-size:1.5rem;text-align:center;white-space:nowrap}
+  .verdict{font-size:.82rem;color:var(--muted);display:block}
+  .price{font-weight:700;color:var(--accent2);white-space:nowrap}
+  .pill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.78rem;font-weight:600}
+  .seg-green{background:rgba(63,185,80,.15);color:#56d364}
+  .seg-amber{background:rgba(210,153,34,.15);color:#e3b341}
+  .seg-blue{background:rgba(56,139,253,.15);color:#79c0ff}
+  /* cards */
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:16px 20px;margin:14px 0}
+  .card.green{border-left:4px solid var(--accent2)}
+  .card.amber{border-left:4px solid var(--amber)}
+  .card.blue{border-left:4px solid var(--blue)}
+  ol li,ul li{margin:6px 0}
+  .warn{background:rgba(248,81,73,.07);border:1px solid rgba(248,81,73,.25);
+    border-radius:10px;padding:8px 20px;margin:16px 0}
+  .rec td:first-child{color:var(--muted)}
+  .rec td:last-child{font-weight:600}
+  a.src{color:var(--accent);text-decoration:none}
+  a.src:hover{text-decoration:underline}
+  .srcs{columns:2;column-gap:30px;font-size:.88rem}
+  @media(max-width:680px){.srcs{columns:1}}
+  footer{color:var(--muted);font-size:.82rem;margin-top:40px;border-top:1px solid var(--border);padding-top:16px}
+  .copyhint{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    background:var(--accent);color:#0d1117;padding:8px 18px;border-radius:8px;font-weight:600;
+    opacity:0;transition:opacity .25s;pointer-events:none;z-index:99}
+  .copyhint.show{opacity:1}
+  .buybtn{display:inline-block;background:var(--accent2);color:#0d1117;font-weight:700;
+    text-decoration:none;padding:11px 22px;border-radius:8px;margin:6px 8px 6px 0;font-size:1rem}
+  .buybtn:hover{background:#56d364}
+  .buybtn.alt{background:var(--panel2);color:var(--accent);border:1px solid var(--accent)}
+  .pick{background:linear-gradient(135deg,#16271b,#1c2a30);border:2px solid var(--accent2);
+    border-radius:12px;padding:20px 24px;margin:22px 0}
+  .pick h2{border:0;margin:0 0 8px;padding:0}
+  details{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:8px 16px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600;color:var(--accent)}
+  .brand{font-weight:800;letter-spacing:2px;color:var(--accent2);font-size:.85rem;text-transform:uppercase}
+  .langbar{position:absolute;top:18px;right:24px}
+  .langbar a{display:inline-block;color:var(--muted);text-decoration:none;font-weight:700;font-size:.85rem;
+    padding:4px 9px;border-radius:6px;margin-left:4px;border:1px solid var(--border)}
+  .langbar a.active{background:var(--accent2);color:#0d1117;border-color:var(--accent2)}
+  .langbar a:hover{color:var(--txt)}
+  .intro{background:linear-gradient(135deg,#161b22,#1a2433);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:22px 0}
+  .intro h2{border:0;margin:0 0 8px;padding:0}
+  .stop{background:linear-gradient(135deg,#2a1a1a,#2a2018);border:2px solid #d29922;border-radius:12px;padding:20px 24px;margin:22px 0}
+  .stop h2{border:0;margin:0 0 8px;padding:0;color:#e3b341}
+</style>
+</head>
+<body>
+<header style="position:relative"><div class="wrap">
+  <div class="langbar"><a href="index.html" class="active">RU</a><a href="en.html">EN</a><a href="lt.html">LT</a></div>
+  <div class="brand">SCANNER · visaginas360.com</div>
+  <h1>🛰️ 3D-сканеры — цена / качество / производитель</h1>
+  <div class="sub">Обзор от 2026-06-17 · профессиональные (реверс-инжиниринг, метрология) + потребительские для 3D-печати · цены USD и EUR (доставка по ЕС) · клик по ячейке копирует текст · клик по заголовку столбца сортирует</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="intro">
+  <h2>🤖 Как с помощью ИИ выбрать то, что вам точно нужно</h2>
+  <p>Эта страница — <b>пример AI-разбора под конкретную задачу</b>. Вы описываете, что нужно — ИИ находит модели, сравнивает характеристики, считает реальные цены в магазинах, отсеивает устаревшее и собирает всё в один понятный обзор за минуты вместо часов поиска. Здесь это сделано для 3D-сканеров, но так же можно разобрать <b>любую покупку или решение</b>.</p>
+  <p style="margin-bottom:0">Главное — хороший AI-разбор честен даже тогда, когда выгоднее <b>не покупать</b> (см. блок ниже). Такой разбор можно <b>заказать под свою задачу</b> или <b>научиться делать самому</b> — подробнее на <a class="src" href="https://visaginas360.com" target="_blank" rel="noopener">visaginas360.com</a>.</p>
+</div>
+
+<div class="stop">
+  <h2>🛑 А стоит ли вообще сейчас тратить деньги? — стоп-сигнал</h2>
+  <p>Прежде чем платить, ИИ помогает задать главный вопрос: <b>нужен ли инструмент прямо сейчас — или есть приоритеты важнее?</b></p>
+  <ul>
+    <li>Если у вас уже есть оборудование, решающее задачу хотя бы частично — сначала выжмите максимум из него.</li>
+    <li>Если покупка не приближает к вашей главной цели — это повод подождать.</li>
+    <li>Покупайте, когда появится конкретная задача, которая окупит покупку.</li>
+  </ul>
+  <p style="margin-bottom:0">Реальный пример из разбора: вместо того чтобы сразу купить 3D-сканер за €500+, разумнее начать с того, что <b>уже есть под рукой</b>, заработать — и тогда взять что-то посерьёзнее. Сэкономленные деньги — это первый «доход» от консультации с ИИ.</p>
+</div>
+
+<nav class="toc">
+  <strong>Содержание</strong>
+  <a href="#kids">🧒 Простыми словами</a>
+  <a href="#main">Главная таблица</a>
+  <a href="#eu">🇪🇺 Цены по ЕС</a>
+  <a href="#print">🖨️ Для 3D-печати (мелочь)</a>
+  <a href="#figures">🎭 Рейтинг для фигурок</a>
+  <a href="#duel">⚔️ Seal vs INSPIRE 2 vs POP 4</a>
+  <a href="#extra">🛒 Ещё модели + аксессуары</a>
+  <a href="#segments">Сегменты</a>
+  <a href="#warn">Оговорки</a>
+  <a href="#rec">Рекомендация</a>
+  <a href="#src">Источники</a>
+</nav>
+
+<div class="pick">
+  <h2>🎯 Совет: что брать — Revopoint INSPIRE 2</h2>
+  <p>Если нужен <b>точный и недорогой</b> сканер для фигурок и деталей — это он. Точность 0.05 мм (для фигурок и печати с запасом), ИК-лазер берёт тёмное и блестящее <b>без спрея</b>, лёгкий (190 г), а в коробке уже есть поворотный стол и 200 маркеров — доплачивать не нужно. Цена в Европе с доставкой по ЕС и VAT — <b>€508</b>.</p>
+  <p style="margin:14px 0 4px">
+    <a class="buybtn" href="https://www.3djake.com/revopoint/inspire-2" target="_blank" rel="noopener">🛒 Купить INSPIRE 2 — 3DJake (€508, доставка по ЕС) →</a>
+    <a class="buybtn alt" href="https://www.revopoint3d.com/products/infrared-laser-3d-scanner-inspire2" target="_blank" rel="noopener">Офиц. Revopoint →</a>
+  </p>
+  <p style="margin:10px 0 0;color:var(--muted);font-size:.9rem">💡 Хочешь докупить разом: спрей <a class="src" href="https://www.3djake.com/aesub" target="_blank" rel="noopener">AESUB Diamond (~€20)</a> для совсем блестящих деталей — и комплект «под ключ» готов (~€530).</p>
+</div>
+
+<h2 id="kids">🧒 Чем дорогой сканер лучше дешёвого — простыми словами</h2>
+<p class="sub">Представь, что 3D-сканер — это фотоаппарат, который вместо обычной картинки делает «слепок» предмета, чтобы потом его напечатать. Дешёвый и дорогой делают одно и то же, но по-разному:</p>
+
+<div class="card green">
+  <h3>✏️ 1. Точность — это как толщина карандаша</h3>
+  <p>Дешёвый сканер рисует <b>толстым</b> карандашом — мелкие детали смазываются, как будто ты обводишь монету жирным маркером. Дорогой рисует <b>тоненьким</b> — видно каждую буковку и царапинку. Поэтому колечко или маленькую шестерёнку хорошо снимет только дорогой.</p>
+</div>
+
+<div class="card amber">
+  <h3>🏃 2. Скорость — как быстрая и медленная камера</h3>
+  <p>Дорогой «фотографирует» предмет в десятки раз быстрее и не сбивается, даже если ты двигаешь рукой. Дешёвый надо вести медленно и аккуратно, иначе он «теряет» предмет и приходится начинать заново.</p>
+</div>
+
+<div class="card blue">
+  <h3>✨ 3. Блестящие и чёрные вещи — самое трудное</h3>
+  <p>Блестящий металл и чёрные предметы для сканера — как зеркало и темнота для глаз: их тяжело «разглядеть». Дешёвый часто вообще не видит такие поверхности (их приходится красить специальным спреем). Дорогой со <b>синим лазером</b> видит их сам.</p>
+</div>
+
+<div class="card green">
+  <h3>📏 4. И крошечное, и большое</h3>
+  <p>Дешёвый хорошо снимает что-то одно — или маленькую фигурку, или большую деталь. Дорогой умеет и то, и другое: от винтика до целого станка.</p>
+</div>
+
+<div class="card amber">
+  <h3>🔌 5. Без проводов и без компьютера</h3>
+  <p>Самые дорогие работают сами, как телефон — без проводов и без ноутбука. С дешёвым нужно таскать за собой компьютер на кабеле.</p>
+</div>
+
+<div class="card blue">
+  <h3>📜 6. «Печать качества» (для работы)</h3>
+  <p>Очень дорогие сканеры дают <b>бумажку-сертификат</b>, что их измерениям можно официально верить — это нужно на заводах, в самолётах, на станциях. Для дома и 3D-печати такая бумажка не нужна, поэтому переплачивать незачем.</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+  <h3>🎯 Вывод одним предложением</h3>
+  <p>Дорогой сканер = <b>точнее, быстрее, видит блестящее и тёмное, работает без проводов и с гарантией качества</b>. Но если нужно просто отсканировать игрушку или деталь для 3D-печати — недорогого за €300–450 хватает с головой. Платить тысячи стоит только тогда, когда важна каждая сотая доля миллиметра и официальная точность.</p>
+</div>
+
+<h2 id="main">Главная таблица</h2>
+<p class="sub">Цены ориентировочные, USD (розница США/ЕС). Для ЕС: +VAT и наценка дистрибьютора.</p>
+<div class="tablewrap">
+<table id="t">
+<thead><tr>
+  <th>#</th><th>Модель</th><th>Технология</th><th>Точность</th>
+  <th>Размер объекта</th><th>Беспров.</th><th>Цена USD</th><th>Производитель</th><th>Назначение</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td class="model">Revopoint Range 2</td><td>Structured light (IR)</td><td>~0.1 мм</td><td>средние / крупные / тело</td><td>—</td><td class="price">$729</td><td>Revopoint (КНР)</td><td>Бюджет, помещения</td></tr>
+<tr><td>2</td><td class="model">Revopoint MetroX</td><td>Blue Laser</td><td>0.01–0.02 мм</td><td>mid</td><td>—</td><td class="price">$999–1271</td><td>Revopoint (КНР)</td><td>Лучший value-лазер</td></tr>
+<tr><td>3</td><td class="model">Creality CR-Scan Raptor</td><td>Hybrid: Blue Laser + NIR</td><td>0.02 мм</td><td>5–4000 мм</td><td>—</td><td class="price">~$1167–1400</td><td>Creality (КНР)</td><td>Универсал прозьюмер</td></tr>
+<tr><td>4</td><td class="model">Einstar Vega</td><td>Wireless handheld</td><td>~0.05 мм</td><td>mid / large</td><td>✅</td><td class="price">$1599</td><td>Shining3D (КНР)</td><td>Мобильность без кабеля</td></tr>
+<tr><td>5</td><td class="model">Creality Raptor Pro</td><td>Hybrid: Blue Laser + NIR</td><td><b>0.01 мм</b></td><td>5–4000 мм</td><td>—</td><td class="price">$1699–1899</td><td>Creality (КНР)</td><td>Топ прозьюмер, металл</td></tr>
+<tr><td>6</td><td class="model">Revopoint MIRACO Plus</td><td>Standalone + фотограмметрия</td><td>metrology-class</td><td>автономно</td><td>✅ без ПК</td><td class="price">~$2000+</td><td>Revopoint (КНР)</td><td>Поле без ноутбука</td></tr>
+<tr><td>7</td><td class="model">Shining3D FreeScan UE Pro2</td><td>Blue Laser + VPG</td><td>0.02 мм (volum.)</td><td>large</td><td>✅</td><td class="price">~$5000+</td><td>Shining3D (КНР)</td><td>Промметрология</td></tr>
+<tr><td>8</td><td class="model">Creaform HandySCAN BLACK|Elite</td><td>Blue Laser metrology</td><td>0.025 мм</td><td>large</td><td>✅</td><td class="price">~$25–50k</td><td>Creaform/AMETEK (Канада)</td><td>Аэрокосмос, авто QC</td></tr>
+<tr><td>9</td><td class="model">ZEISS T-SCAN hawk 2</td><td>Laser metrology</td><td>трасируемая</td><td>large</td><td>✅</td><td class="price">$50k+</td><td>ZEISS (Германия)</td><td>Премиум-метрология</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="eu">🇪🇺 Цены в Европе (EUR, с доставкой по ЕС)</h2>
+<p class="sub">Реальные EU-магазины, цены <b>с VAT</b>, июнь 2026. Лучший канал по ЕС — <b>3DJake</b> (бесплатная доставка по ЕС от €87,90, склад AT/DE).</p>
+<div class="tablewrap">
+<table id="t2">
+<thead><tr>
+  <th>#</th><th>Модель</th><th>Цена EUR (с VAT)</th><th>Магазин (страна)</th><th>Доставка по ЕС</th><th>Ссылка</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td class="model">Revopoint Range 2</td><td>~€680–730 <b>(снят с продажи в EU)</b></td><td>3DJake / IGO3D / Botland</td><td>нет в наличии</td><td><a class="src" href="https://www.3djake.com/revopoint/range-2">3djake</a></td></tr>
+<tr><td>2</td><td class="model">Revopoint MetroX</td><td class="price">€1 199 <span style="color:var(--muted);font-weight:400">(рег. €1 499)</span></td><td>Make in Europe (DE)</td><td>да, EU от €50</td><td><a class="src" href="https://www.makeineurope.de/en/products/revopoint-metrox-3d-scanner-advanced-edition">makeineurope</a></td></tr>
+<tr><td>3</td><td class="model">Creality CR-Scan Raptor</td><td class="price">€1 199 <span style="color:var(--muted);font-weight:400">(рег. €1 599)</span></td><td>creality.shop (CZ/DE)</td><td>да, EU</td><td><a class="src" href="https://www.creality.shop/products/creality-cr-scan-raptor-3d-scanner">creality.shop</a></td></tr>
+<tr><td>4</td><td class="model">Einstar Vega</td><td class="price">€1 935 <span style="color:var(--muted);font-weight:400">(−20%, рег. €2 420)</span></td><td>3DJake (AT/DE)</td><td><b>free от €87,90</b></td><td><a class="src" href="https://www.3djake.com/shining-3d/einstar-vega">3djake</a></td></tr>
+<tr><td>5</td><td class="model">Creality Raptor Pro</td><td class="price">€1 899</td><td>creality.shop (CZ/DE)</td><td>да, EU</td><td><a class="src" href="https://www.creality.shop/products/creality-raptor-pro-3d-scanner">creality.shop</a></td></tr>
+<tr><td>6</td><td class="model">Revopoint MIRACO Plus</td><td class="price">€2 434</td><td>IGO3D (DE)</td><td>да, EU</td><td><a class="src" href="https://www.igo3d.com/revopoint-3d-scanner-en">igo3d</a></td></tr>
+<tr><td>7</td><td class="model">FreeScan UE Pro2</td><td>~€25 000–30 000 (quote)</td><td>Laserscanning Europe (DE)</td><td>по запросу</td><td><a class="src" href="https://www.laserscanning-europe.com/en/handheld-3d-scanners/shining-3d-freescan-ue-pro2">laserscanning-europe</a></td></tr>
+<tr><td>8</td><td class="model">Creaform HandySCAN BLACK Elite</td><td>~€32 000–38 000 (quote)</td><td>Creaform / дистрибьюторы</td><td>по запросу</td><td><a class="src" href="https://www.creaform3d.com/en/products/portable-3d-scanners/handyscan-3d-pro-series">creaform3d</a></td></tr>
+<tr><td>9</td><td class="model">ZEISS T-SCAN hawk 2</td><td>~€30 000+ (quote)</td><td>ZEISS / дистрибьюторы</td><td>по запросу</td><td><a class="src" href="https://www.zeiss.com/metrology/en/about-us/newsroom/2023/t-scan-hawk-2.html">zeiss</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="card green">
+  <h3>Вывод по закупке по ЕС</h3>
+  <ul>
+    <li><b>3DJake</b> — лучший канал: бесплатная доставка по ЕС от €87,90, цены с 21% VAT, реальный EU-склад. Там же дешёвый Einstar Vega (€1 935).</li>
+    <li><b>MetroX</b> и <b>CR-Scan Raptor</b> — паритет €1 199 (MetroX у Make in Europe, Raptor у creality.shop).</li>
+    <li><b>Raptor Pro €1 899</b> и <b>MIRACO Plus €2 434</b> — оба с доставкой по EU.</li>
+    <li>Прямых литовских (.lt) реселлеров по этим моделям нет — оптимальны 3DJake и немецкие магазины.</li>
+  </ul>
+</div>
+<div class="warn">
+  ⚠️ <b>Range 2 в EU фактически недоступен</b> (конец жизненного цикла, смена на POP 4). Бюджетная замена для помещений — Revopoint POP 4 или MetroX.
+</div>
+
+<h2 id="print">🖨️ Ручные сканеры для 3D-печати мелких объектов (€270–920)</h2>
+<p class="sub">Потребительский/хобби-сегмент: фигурки, миниатюры, мелкие детали, прототипы. Цены — реальные EU-магазины (3djake AT, igo3d DE, botland PL), <b>с VAT, доставка по ЕС</b>. Клик по заголовку столбца сортирует.</p>
+<div class="tablewrap">
+<table id="t3">
+<thead><tr>
+  <th>Модель</th><th>Технология</th><th>Точность</th><th>Цвет</th><th>Цена EUR</th><th>Магазин</th><th>Для чего</th>
+</tr></thead>
+<tbody>
+<tr><td class="model">3DMakerpro Seal Lite</td><td>Синий свет</td><td>0.02 мм</td><td>моно</td><td class="price">€271</td><td>3djake</td><td>Самый дешёвый «мелкий»</td></tr>
+<tr><td class="model">Creality CR-Scan Ferret Pro</td><td>Структ. свет, one-shot</td><td>0.1 мм</td><td>да (24-bit)</td><td class="price">€357</td><td>3djake</td><td>Бюджетный универсал, фигурки</td></tr>
+<tr><td class="model">3DMakerpro Mole</td><td>Структ. свет, мультиспектр</td><td>0.05 мм (от 15 мм)</td><td>да</td><td class="price">~€430</td><td>3dmakerpro EU</td><td>Малый–средний</td></tr>
+<tr><td class="model">3DMakerpro Seal</td><td>Синий свет</td><td>0.01–0.02 мм</td><td>да (24-bit)</td><td class="price">~€440–470</td><td>3djake</td><td>Мелкая деталь + цвет</td></tr>
+<tr style="background:rgba(63,185,80,.07)"><td class="model">⭐ Revopoint INSPIRE 2</td><td>ИК структ. свет + 11 лазер. линий</td><td>0.05 мм</td><td>да (RGB)</td><td class="price">€453–565</td><td>botland / igo3d</td><td>Лучший вход, фигурки и детали</td></tr>
+<tr><td class="model">Revopoint POP 3 Plus</td><td>ИК структ. свет</td><td>0.05 мм</td><td>да</td><td class="price">€558–633</td><td>botland / 3djake</td><td>Средние детали, фигурки</td></tr>
+<tr><td class="model">Revopoint POP 4 <span style="color:var(--muted)">(новинка)</span></td><td>Гибрид: синий лазер + ИК</td><td>0.03 мм</td><td>да</td><td class="price">~€690–800</td><td>revopoint3d (предзаказ)</td><td>Блестящий/тёмный металл</td></tr>
+<tr><td class="model">Creality CR-Scan Otter</td><td>Двухлинзовый структ. свет</td><td><b>0.02 мм</b></td><td>да (24-bit)</td><td class="price">€781</td><td>3djake</td><td>Мелкая деталь + точность</td></tr>
+<tr><td class="model">Shining3D Einstar</td><td>ИК VCSEL структ. свет</td><td>0.1 мм</td><td>да (RGB)</td><td class="price">~€799</td><td>einstar EU</td><td>Средние/крупные (не мелочь)</td></tr>
+<tr><td class="model">Revopoint MINI 2</td><td>Синий структ. свет</td><td><b>0.02 мм</b> (от 10 мм)</td><td>да</td><td class="price">€917</td><td>igo3d</td><td>Ювелирка, миниатюры</td></tr>
+</tbody>
+</table>
+</div>
+<div class="warn">
+<b>Замечания (июнь 2026):</b>
+<ul>
+  <li><b>INSPIRE 1</b> и <b>POP 3</b> (не-Plus) сняты → заменены на <b>INSPIRE 2</b> и <b>POP 3 Plus</b>. Из Ferret актуален только <b>Ferret Pro</b>.</li>
+  <li><b>Einstar</b> при 0.1 мм проигрывает Otter и Mini 2 (0.02 мм) за схожую цену — для мелочи невыгоден.</li>
+  <li><b>Seal Lite</b> — только моно-текстура (геометрия точная, полного цвета нет).</li>
+  <li>Настольные turntable (<b>SOL / Matter and Form</b>) для мелочи под печать не рекомендую — медленнее, хуже на сложной геометрии, в ЕС сворачиваются.</li>
+</ul>
+</div>
+<h3>ТОП-3 для 3D-печати мелких объектов</h3>
+<div class="card green">
+  <p>💰 <b>Самый бюджетный рабочий — Creality CR-Scan Ferret Pro (€357):</b> цветной, простой, реально берёт фигурки. Ещё дешевле — Seal Lite €271 (но моно-текстура).</p>
+  <p>⭐ <b>Лучший баланс — Revopoint INSPIRE 2 (€453 на botland):</b> 0.05 мм, RGB-цвет, лазер + структ.свет, прощает блеск и тёмные поверхности.</p>
+  <p>🔬 <b>Самая мелкая детализация — Revopoint MINI 2 (€917):</b> синий свет, 0.02 мм, объекты от 10 мм (ювелирка/миниатюры). Альтернативы той же точности — Otter €781 / Seal €440.</p>
+</div>
+
+<h2 id="figures">🎭 Какой сканер лучше для печати фигурок — рейтинг</h2>
+<p class="sub">Оценка по тому, что важно именно для фигурок и миниатюр: мелкая детализация, цвет (если фигурка раскрашенная), простота для новичка и цена. Звёзды: ★ = хуже, ★★★★★ = отлично. Значок справа — короткий вердикт.</p>
+<div class="tablewrap">
+<table id="t4">
+<thead><tr>
+  <th>Сканер</th><th>🎯 Детализация</th><th>🎨 Цвет фигурки</th><th>👍 Простота</th><th>💶 Цена</th><th class="srchcol">Вердикт</th>
+</tr></thead>
+<tbody>
+<tr style="background:rgba(63,185,80,.07)">
+  <td class="model">Revopoint INSPIRE 2 <span style="color:var(--muted)">€453</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td class="badge">🥇<span class="verdict">лучший выбор</span></td>
+</tr>
+<tr>
+  <td class="model">Revopoint MINI 2 <span style="color:var(--muted)">€917</span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★<span class="off">★★★</span></span></td>
+  <td class="badge">🔬<span class="verdict">для миниатюр</span></td>
+</tr>
+<tr>
+  <td class="model">Creality CR-Scan Ferret Pro <span style="color:var(--muted)">€357</span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td class="badge">💰<span class="verdict">бюджет-выбор</span></td>
+</tr>
+<tr>
+  <td class="model">Revopoint POP 4 <span style="color:var(--muted)">~€690</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td class="badge">👍<span class="verdict">универсал</span></td>
+</tr>
+<tr>
+  <td class="model">Creality CR-Scan Otter <span style="color:var(--muted)">€781</span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td class="badge">👍<span class="verdict">точность+</span></td>
+</tr>
+<tr>
+  <td class="model">Revopoint POP 3 Plus <span style="color:var(--muted)">€558</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td class="badge">👍<span class="verdict">хороший</span></td>
+</tr>
+<tr>
+  <td class="model">3DMakerpro Seal <span style="color:var(--muted)">~€450</span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td class="badge">👍<span class="verdict">детально+цвет</span></td>
+</tr>
+<tr>
+  <td class="model">3DMakerpro Seal Lite <span style="color:var(--muted)">€271</span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★<span class="off">★★★</span></span></td>
+  <td><span class="stars">★★★<span class="off">★★</span></span></td>
+  <td><span class="stars">★★★★★</span></td>
+  <td class="badge">⚠️<span class="verdict">без цвета</span></td>
+</tr>
+<tr>
+  <td class="model">Shining3D Einstar <span style="color:var(--muted)">~€799</span></td>
+  <td><span class="stars">★★<span class="off">★★★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★★★<span class="off">★</span></span></td>
+  <td><span class="stars">★★<span class="off">★★★</span></span></td>
+  <td class="badge">👎<span class="verdict">не для мелочи</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="card green">
+  <h3>Кому что брать для фигурок</h3>
+  <ul>
+    <li>🥇 <b>Хочешь лучший результат без головной боли — Revopoint INSPIRE 2 (€453).</b> Цветной скан, ловит лица и складки одежды, прощает блеск, прост для новичка. Идеален для фигурок 10–30 см.</li>
+    <li>💰 <b>Хочешь подешевле и просто попробовать — Creality CR-Scan Ferret Pro (€357).</b> Цветной, лёгкий, но детали помельче размывает — для крупных фигур ок, для миниатюр слабоват.</li>
+    <li>🔬 <b>Сканируешь крошечные миниатюры (варгейм, ювелирка) — Revopoint MINI 2 (€917).</b> Видит самую мелкую деталь, но дороже и капризнее в работе.</li>
+    <li>⚠️ <b>Не бери Seal Lite, если фигурка раскрашенная</b> — он снимает форму точно, но без полноцветной текстуры (только серый «слепок»).</li>
+    <li>👎 <b>Einstar для фигурок не подходит</b> — он заточен под крупные объекты, мелочь смазывает.</li>
+  </ul>
+</div>
+
+<h2 id="duel">⚔️ Seal vs INSPIRE 2 vs POP 4 — детальное сравнение</h2>
+<p class="sub">Три модели близкого сегмента, но <b>разная философия</b>: Seal — высокоточный синий свет с 24-bit цветом (форма+цвет мелочи); INSPIRE 2 — лёгкий универсал с ИК-лазером; <b>POP 4</b> — новый «5-в-1» гибрид с мощным синим лазером (универсал-апгрейд, предзаказ).</p>
+
+<div class="card blue">
+  <h3>🆕 Что такое Revopoint POP 4 «5-in-1»</h3>
+  <p>Пять режимов сканирования в одном приборе — под разные задачи:</p>
+  <ol>
+    <li><b>Full-Field HD</b> — структурный свет, максимальная детализация</li>
+    <li><b>VCSEL Rapid</b> — скоростной ИК, работает даже на улице (до 100 000 lux)</li>
+    <li><b>Hybrid HD</b> — двойной проектор: быстро + качественно</li>
+    <li><b>30 Cross Blue Laser Lines</b> — 30 синих линий для тёмных/блестящих поверхностей</li>
+    <li><b>Single-Line Deep Hole</b> — одна синяя линия для пазов и глубоких отверстий</li>
+  </ol>
+  <p style="margin-bottom:0"><b>Статус:</b> Kickstarter завершён (май 2026), отгрузка предзаказов с <b>22 июня 2026</b>. В EU-рознице (3djake/igo3d) пока нет — ориентир цены <b>~€750–850</b> с VAT (MSRP $919, предзаказ ~$755).</p>
+</div>
+
+<div class="tablewrap">
+<table id="t5">
+<thead><tr><th>Параметр</th><th>3DMakerpro Seal</th><th>Revopoint INSPIRE 2</th><th>Revopoint POP 4 🆕</th></tr></thead>
+<tbody>
+<tr><td>Технология</td><td>Синий свет (structured)</td><td>ИК structured + 11-лин. ИК-лазер</td><td><b>5-в-1:</b> 30 синих лазер-линий + ИК VCSEL + full-field</td></tr>
+<tr><td>Точность (single-frame)</td><td><b>0.01 мм</b></td><td>до 0.05 мм</td><td>0.03 мм (лазер) / 0.08 (full-field)</td></tr>
+<tr><td>Мин. объект / диапазон</td><td>~10–300 мм</td><td>от 20×20×20 мм, до 2 м</td><td>от 10×10×10 мм, до 2×2×2 м</td></tr>
+<tr style="background:rgba(63,185,80,.08)"><td>🎨 Цвет / текстура</td><td><b>24-bit камера</b>, 1 проход</td><td>RGB, 1 проход</td><td>RGB 1.3 МП, 1 проход</td></tr>
+<tr><td>Скорость</td><td>10 fps / 100 тыс. т/с</td><td>до 30 fps</td><td><b>до 5 млн точек/с</b>, лазер до 105 fps</td></tr>
+<tr><td>Тёмное / блестящее</td><td>обычно нужен спрей</td><td>лазер без спрея</td><td><b>30 синих лазер-линий — лучше всех без спрея</b></td></tr>
+<tr><td>Автономность</td><td>нужен ПК</td><td>нужен ПК/телефон</td><td>частично телефон, но лазер — через ПК по WiFi</td></tr>
+<tr><td>Софт / экспорт</td><td>JMStudio — OBJ/STL/PLY/ASC</td><td>Revo Scan 5 — STL/OBJ/PLY/FBX/3MF/GLTF</td><td>Revo Scan — +3MF/glTF/FBX/Splat(3DGS)</td></tr>
+<tr><td>Цена EU (с VAT)</td><td class="price">€473</td><td class="price">€508</td><td class="price">~€750–850 (предзаказ)</td></tr>
+<tr><td>Доступность</td><td>✅ в продаже</td><td>✅ в продаже</td><td>⏳ предзаказ, отгрузка с 22.06.2026</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>🎨 «Сканер сразу привязывает цвет?» — да, у обоих. Но насколько это важно?</h3>
+<div class="card amber">
+  <p><b>Как это работает:</b> у обоих есть встроенная цветная камера, и цвет (текстура) «налепляется» на 3D-форму <b>автоматически в одном проходе</b> — отдельную камеру докупать не надо. На выходе модель не только нужной формы, но и с раскраской фигурки.</p>
+  <p><b>Но цвет нужен НЕ всегда:</b></p>
+  <ul>
+    <li>🟢 <b>Цвет ВАЖЕН, если</b> ты хочешь: цифровую копию раскрашенной фигурки «как есть» (для архива, рендера, показа на экране, в Blender), или печать на <b>цветном</b> 3D-принтере. Тогда красивая текстура — половина результата.</li>
+    <li>⚪ <b>Цвет НЕ нужен, если</b> ты печатаешь обычным одноцветным пластиком (PLA/смола) и красишь фигурку кисточкой сам. Принтеру важна только <b>форма</b> (геометрия), текстуру он всё равно не печатает — цвет просто «для красоты» на экране.</li>
+  </ul>
+  <p><b>По качеству цвета Seal сильнее:</b> 24-bit камера + геометрия 0.01 мм = плотная, чистая, точная текстура на раскрашенной миниатюре. У INSPIRE 2 цвет тоже есть и нормальный, но это вторичная фича — производитель делает акцент на лазере и геометрии, а не на цвете.</p>
+</div>
+
+<div class="card green">
+  <h3>🏁 Что выбрать</h3>
+  <ul>
+    <li>🎨 <b>Нужен ХОРОШИЙ цвет раскрашенной фигурки → 3DMakerpro Seal (€473).</b> 24-bit камера + точность 0.01 мм = лучший полноцветный результат на мелочи. Минус: нет стола/маркеров в коробке; тёмное/глянец мешает цвету (спрей).</li>
+    <li>📐 <b>Лёгкий и дешевле, важна форма → Revopoint INSPIRE 2 (€508).</b> Лазер берёт тёмное/блестящее без спрея, полный комплект (стол + 200 маркеров), 190 г. Но точность ниже Seal, лазер слабее POP 4.</li>
+    <li>🆕 <b>Нужен универсал на годы вперёд → Revopoint POP 4 (~€750–850, ждать поставку).</b> 30 синих лазер-линий бьют тёмное/блестящее лучше всех, скоростные режимы, объекты от 10 мм до 2 м. Явный апгрейд над INSPIRE 2. Минусы: дороже, не полностью автономен, в EU пока предзаказ.</li>
+  </ul>
+  <p style="margin-bottom:0"><b>Коротко:</b> Seal — «фотограф фигурки» (форма + цвет на отлично); INSPIRE 2 — «лёгкая рабочая лошадка по форме»; POP 4 — «швейцарский нож»: дороже и ждать, но один прибор на любые задачи (детали + блеск + размер + скорость).</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+  <h3>💬 Мой вывод по POP 4</h3>
+  <p><b>Для чисто фигурок POP 4 — переплата.</b> Если задача только сканировать фигурки и мелкие детали под печать — Seal (за цвет/детализацию) или INSPIRE 2 (за лёгкость и цену) сделают то же, дешевле и уже сейчас, без ожидания EU-поставки.</p>
+  <p style="margin-bottom:0"><b>POP 4 берут ради универсальности:</b> если кроме фигурок будешь снимать блестящий металл, тёмные детали, крупные объекты до 2 м и нужна скорость — это лучший выбор из троих, оправдывающий цену и ожидание. Для задач реверс-инжиниринга по металлу POP 4 интереснее Seal именно из-за синего лазера. Совет: дождись появления в EU-рознице (3djake/igo3d) с местной гарантией, не бери с Kickstarter напрямую.</p>
+</div>
+
+<h2 id="extra">🛒 Дополнительно: ещё модели, аксессуары и приложения (EU-склад)</h2>
+<p class="sub">Что ещё реально завозится в ЕС с доставкой по ЕС, плюс расходники без которых сканер на блестящем/тёмном бесполезен. Цены ориентировочные, июнь 2026.</p>
+
+<h3>Другие сканеры с EU-складом (профи-сегмент)</h3>
+<div class="tablewrap">
+<table id="t6">
+<thead><tr><th>Модель</th><th>Бренд</th><th>Тип</th><th>Точность</th><th>Цвет</th><th>Цена EUR</th><th>Где</th></tr></thead>
+<tbody>
+<tr><td class="model">iReal 2E</td><td>Scantech</td><td>Ручной, ИК VCSEL</td><td>до 0.1 мм</td><td>да</td><td class="price">от ~€3 980</td><td><a class="src" href="https://center3dprint.com/3d-scanner-scantech-ireal-2e-color">center3dprint</a></td></tr>
+<tr><td class="model">Fisher Handheld</td><td>Thunk3D</td><td>Структ. свет</td><td>~0.04 мм</td><td>да</td><td>по запросу</td><td><a class="src" href="https://center3dprint.com/en/shop/3d-scanners/thunk3d-fisher-handheld-3d-scanner">center3dprint</a></td></tr>
+<tr><td class="model">JS500 (ювелирный)</td><td>Thunk3D</td><td>Настольный, 5–80 мм</td><td>10 мкм</td><td>да</td><td class="price">~€5 100</td><td><a class="src" href="https://pro3dshop.com/products/thunk3d-jewellery-scanner">pro3dshop</a></td></tr>
+<tr><td class="model">RangeVision Smart</td><td>RangeVision ⚠️</td><td>Настольный, структ. свет</td><td>~0.07 мм</td><td>да</td><td class="price">от €2 299</td><td><a class="src" href="https://www.sarras-shop.com/en/3D-Scanner/">sarras-shop</a></td></tr>
+<tr><td class="model">Calibry Mini</td><td>Thor3D ⚠️</td><td>Ручной, мелк./средн.</td><td>до 0.07 мм</td><td>да</td><td class="price">€6 990</td><td><a class="src" href="https://thor3dscanner.com/en/buy/">thor3dscanner</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="sub">⚠️ RangeVision и Thor3D — российские бренды (склад в Австрии). При доставке по ЕС возможны санкционные/гарантийные риски — учитывай.</p>
+
+<h3>🧴 Аксессуары и расходники (3DJake, цены с VAT)</h3>
+<div class="tablewrap">
+<table id="t7">
+<thead><tr><th>Товар</th><th>Назначение</th><th>Цена EUR</th><th>Где</th></tr></thead>
+<tbody>
+<tr><td class="model">AESUB Diamond 200 мл</td><td>Сверхбыстрый испаряющийся спрей (~10 мин)</td><td class="price">€20.16</td><td><a class="src" href="https://www.3djake.com/aesub">3djake</a></td></tr>
+<tr><td class="model">AESUB Blue 400 мл</td><td>Испаряющийся матирующий (~1–2 ч)</td><td class="price">€33.26</td><td><a class="src" href="https://www.3djake.com/aesub/blue-scanning-spray">3djake</a></td></tr>
+<tr><td class="model">AESUB White 400 мл</td><td>Стойкий матирующий (надо смывать)</td><td class="price">€16.12</td><td><a class="src" href="https://www.3djake.com/aesub">3djake</a></td></tr>
+<tr><td class="model">Revopoint Dual Axis Turntable</td><td>Двухосевой авто-стол для мелких фигурок</td><td class="price">~€99</td><td><a class="src" href="https://www.3djake.com/revopoint/dual-axis-turntable">3djake</a></td></tr>
+<tr><td class="model">3DMakerpro Multi-axis Turntable</td><td>Авто-стол для Seal</td><td class="price">~€150</td><td><a class="src" href="https://www.3djake.com/3dmakerpro/multi-axis-turntable">3djake</a></td></tr>
+<tr><td class="model">3DMakerpro Basic Turntable</td><td>Простой 360° стол (без авто-синхро)</td><td class="price">~€18</td><td><a class="src" href="https://www.3djake.com/3dmakerpro/basic-turntable">3djake</a></td></tr>
+<tr><td class="model">Revopoint Calibration Board</td><td>Калибровочная плата</td><td class="price">~€43</td><td><a class="src" href="https://www.3djake.com/revopoint/large-calibration-board-kit">3djake</a></td></tr>
+<tr><td class="model">Revopoint Reference Markers</td><td>Маркеры/таргеты для трекинга</td><td class="price">~€24</td><td><a class="src" href="https://www.3djake.com/revopoint">3djake</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>📱 Сканирование телефоном — бесплатные приложения</h3>
+<div class="card amber">
+  <ul>
+    <li><b>KIRI Engine</b> (iOS/Android/Web) — фотограмметрия + NeRF, экспорт без paywall в free-тире. <b>Лучший бесплатный вариант для крупных фигурок под печать.</b></li>
+    <li><b>Polycam</b> — быстрый и удобный, но полный экспорт по подписке.</li>
+    <li><b>Scaniverse</b> (бесплатный) — локальная обработка, быстрый, но хуже на гладких объектах.</li>
+    <li><b>RealityScan</b> (Epic) — высокий полигонаж, но слаб на гладких/однотонных поверхностях.</li>
+  </ul>
+  <p style="margin-bottom:0">⚠️ Для мелких деталей (&lt;50 мм) телефон <b>проигрывает любому</b> структурно-светному сканеру. Для миниатюр — только настоящий сканер.</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--accent)">
+  <h3>💬 Мой вывод по дополнительной продукции</h3>
+  <p><b>Что реально стоит внимания:</b></p>
+  <ul>
+    <li>🧴 <b>Спрей AESUB Diamond (~€20) — почти обязателен.</b> Без него блестящий металл и тёмный пластик не отсканировать ни одним бюджетным сканером. Diamond испаряется за 10 минут — не надо смывать. Это первое, что докупать вместе со сканером.</li>
+    <li>🔄 <b>Поворотный стол под фигурки.</b> К Revopoint — Dual Axis (~€99), к Seal — Multi-axis (~€150). Сильно упрощает скан мелких объектов и поднимает качество. Дешёвый Basic за €18 брать только «попробовать».</li>
+    <li>🎯 <b>Маркеры (~€24) + калибровочная плата (~€43)</b> — копеечный набор, который заметно улучшает трекинг на однородных поверхностях.</li>
+    <li>📐 <b>Scantech iReal 2E (~€3 980)</b> — единственный из «доп.профи», кого стоит рассматривать, если задачи перерастут хобби (бюсты, корпуса, реверс-инжиниринг). Профессиональнее MIRACO, но и дороже втрое.</li>
+  </ul>
+  <p><b>Что пропустить:</b> Thunk3D Fisher S, Thor3D Calibry, RangeVision PRO — это €5 000–11 000, избыточно для фигурок. Плюс Thor3D и RangeVision — российские бренды: санкционные и гарантийные риски при доставке по ЕС, лучше не связываться. Телефонные приложения — только для крупных объектов, мелочь им не по зубам.</p>
+  <p style="margin-bottom:0"><b>Итоговый комплект «фигурки под ключ» с доставкой по ЕС:</b> Revopoint INSPIRE 2 (€508, комплект уже со столом и маркерами) <i>или</i> 3DMakerpro Seal (€473, если важен цвет) + AESUB Diamond (€20) + (к Seal) поворотный стол (€150). Бюджет ~€530–650 — и закрывает 95% задач по фигуркам.</p>
+</div>
+
+<h2 id="segments">Разбор по сегментам</h2>
+
+<div class="card green">
+  <h3><span class="pill seg-green">Бюджет</span> до $1 000</h3>
+  <ul>
+    <li><b>Revopoint Range 2 ($729)</b> — крупные объекты и помещения, точность ~0.1 мм. Геометрию комнаты/конструкции снимет, прецизионную деталь — нет.</li>
+    <li><b>Revopoint MetroX ($999)</b> — голубой лазер до 0.01 мм. Лучшее цена/точность для мелких и средних деталей.</li>
+  </ul>
+</div>
+
+<div class="card amber">
+  <h3><span class="pill seg-amber">Прозьюмер</span> ≈$1 200–1 900 — рабочая зона для твоих задач</h3>
+  <ul>
+    <li><b>Creality CR-Scan Raptor (~$1 200)</b> — гибрид: голубой лазер (точность, тёмный металл) + NIR-структурный свет (быстрый захват крупных форм). 5–4000 мм закрывает и болт, и агрегат.</li>
+    <li><b>Creality Raptor Pro ($1 899)</b> — 0.01 мм в лазере, лучше трекинг на металле, быстрее. 372 г, кейс, калибровочная плита и маркеры в комплекте.</li>
+    <li><b>Einstar Vega ($1 599)</b> — беспроводной, удобно работать вокруг оборудования без кабеля к ПК.</li>
+  </ul>
+</div>
+
+<div class="card blue">
+  <h3><span class="pill seg-blue">Промметрология</span> $5k+</h3>
+  <p>FreeScan UE Pro2, Creaform HandySCAN, ZEISS T-SCAN hawk 2 — трасируемая (сертифицируемая) точность, фотограмметрия для больших объёмов. Бюджет отдела/предприятия, не личная покупка.</p>
+</div>
+
+<h2 id="warn">⚠️ Важные оговорки (из обзоров)</h2>
+<div class="warn">
+<ol>
+  <li><b>Точность ≠ прецизионность.</b> Заявленные 0.01–0.02 мм — в идеале. На практике облако точек у прозьюмеров «шумит»: плоскость в меше выглядит шероховатой. Для CAD-реверса критично — тестируй на реальной детали до покупки.</li>
+  <li><b>Тёмный металл и матовые поверхности.</b> Голубой лазер (Raptor / MetroX / FreeScan) справляется лучше структурного света. Для нержавейки/окрашенного металла — лазерные режимы.</li>
+  <li><b>Маркеры.</b> Для крупных объектов нужны reflective markers (в комплекте Raptor Pro). Без них трекинг плывёт на однородных поверхностях.</li>
+  <li><b>Размер объекта.</b> Прецизионность падает с ростом объекта (volumetric accuracy). Болт и реактор — разные режимы.</li>
+  <li><b>Софт.</b> Creality Scan / Revopoint Studio / Shining3D EXStar. Проверь экспорт в STEP/STL для дальнейшего CAD.</li>
+</ol>
+</div>
+
+<h2 id="rec">💡 Рекомендация по применению</h2>
+<div class="tablewrap">
+<table class="rec">
+<tbody>
+<tr><td>Реверс-инжиниринг деталей/узлов (металл, точность)</td><td>Creality Raptor Pro — $1 899</td></tr>
+<tr><td>Жёсткий бюджет, детали средние</td><td>Revopoint MetroX — $999</td></tr>
+<tr><td>Обмеры помещений, крупных конструкций</td><td>Revopoint Range 2 — $729</td></tr>
+<tr><td>Поле, вокруг оборудования без ноутбука</td><td>Einstar Vega ($1 599) / MIRACO Plus ($2 000+)</td></tr>
+<tr><td>Сертифицируемая метрология для отдела</td><td>Creaform / ZEISS (бюджет предприятия)</td></tr>
+</tbody>
+</table>
+</div>
+<details>
+  <summary>Итоговый вывод</summary>
+  <p>Для личного/отдельского инструмента оптимум — <b>Creality Raptor Pro</b>: голубой лазер для металла, 0.01 мм, диапазон под деталь и агрегат, маркеры и кейс в комплекте, ~$1 900. Запасной вариант экономии — <b>Revopoint MetroX</b> за вдвое меньше с похожей лазерной точностью на мелочи.</p>
+</details>
+
+<h2 id="src">Источники</h2>
+<div class="srcs">
+  <a class="src" href="https://store.creality.com/products/creality-raptor-pro-3d-scanner">Creality Raptor Pro — офиц. магазин</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/creality-cr-scan-raptor-review/">CR-Scan Raptor Review 2026</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/creality-raptor-pro-3d-scanner-review/">Raptor Pro Review 2026</a><br>
+  <a class="src" href="https://makezine.com/article/digital-fabrication/3d-printing-workshop/review-creality-raptor-pro-3d-scanner/">Raptor Pro Review — Make:</a><br>
+  <a class="src" href="https://the-gadgeteer.com/2025/09/11/creality-raptor-pro-3d-scanner-review-great-in-theory-not-so-great-in-reality/">Raptor Pro — The Gadgeteer</a><br>
+  <a class="src" href="https://3dprinting.com/scanners/best-professional-3d-scanners/">Best Professional 3D Scanners 2026</a><br>
+  <a class="src" href="https://www.barchart.com/story/news/1456938/top-7-reliable-industrial-3d-scanners-for-metrology-qc-2026-buyers-guide">Top 7 Industrial Scanners 2026</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/best-3d-scanner-for-reverse-engineering/">Best for Reverse Engineering 2026</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/revopoint-metrox-review/">Revopoint MetroX Review 2026</a><br>
+  <a class="src" href="https://www.3dtechvalley.com/einstar-vega-3d-scanner-review/">Einstar Vega Review 2026</a><br>
+  <a class="src" href="https://swiftwand.com/en/handheld-3d-scanner-buying-guide-2026-en/">Handheld Buying Guide 2026</a><br>
+</div>
+
+<div class="intro" style="border-color:var(--accent2);text-align:center">
+  <h2 style="color:var(--accent2)">💼 Нужен такой же разбор под вашу задачу?</h2>
+  <p>Этот обзор собран с помощью ИИ за часы, а не недели. Так можно разобрать любой выбор — оборудование, софт, технику, услугу: найти варианты, сравнить, посчитать реальные цены и честно сказать, стоит ли вообще тратить деньги.</p>
+  <p style="margin-bottom:0">
+    <a class="buybtn" href="https://visaginas360.com" target="_blank" rel="noopener">Заказать разбор под свою задачу →</a>
+    <a class="buybtn alt" href="https://visaginas360.com" target="_blank" rel="noopener">Научиться делать так самому →</a>
+  </p>
+</div>
+
+<footer>Сгенерировано с помощью ИИ · 2026-06-17 · <a class="src" href="https://visaginas360.com" target="_blank" rel="noopener">visaginas360.com</a> · цены ориентировочные, проверяйте у дистрибьютора в ЕС перед покупкой</footer>
+</div>
+
+<div class="copyhint" id="hint">Скопировано ✓</div>
+
+<script>
+// добавить 2 колонки поиска (Google + YouTube) в конец каждой таблицы
+function addSearchCols(tableId){
+  const table=document.getElementById(tableId);
+  if(!table)return;
+  const htr=table.querySelector('thead tr');
+  ['🔍','▶'].forEach((ic,k)=>{
+    const th=document.createElement('th');
+    th.className='srchcol'; th.textContent=ic;
+    th.title=k===0?'Google':'YouTube';
+    htr.appendChild(th);
+  });
+  table.querySelectorAll('tbody tr').forEach(tr=>{
+    const m=tr.querySelector('td.model');
+    const name=m?m.innerText.replace(/[⭐🔬💰]/g,'').replace(/\(.*?\)/g,'').trim():'';
+    const qg=encodeURIComponent(name+' 3D scanner price EU buy Europe');
+    const qy=encodeURIComponent(name+' 3D scanner review');
+    const tdG=document.createElement('td'); tdG.className='srchcol';
+    tdG.innerHTML='<a class="srch" target="_blank" rel="noopener" title="Google (EU): '+name+'" href="https://www.google.com/search?q='+qg+'&gl=lt&hl=en">🔍</a>';
+    const tdY=document.createElement('td'); tdY.className='srchcol';
+    tdY.innerHTML='<a class="srch" target="_blank" rel="noopener" title="YouTube: '+name+'" href="https://www.youtube.com/results?search_query='+qy+'">▶</a>';
+    tr.appendChild(tdG); tr.appendChild(tdY);
+  });
+}
+addSearchCols('t'); addSearchCols('t2'); addSearchCols('t3');
+// таблица фигурок: название -> Google-поиск с ценой (где купить)
+document.querySelectorAll('#t4 tbody td.model').forEach(td=>{
+  const name=td.innerText.replace(/[⭐🔬💰]/g,'').replace(/~?€\S+/g,'').replace(/\(.*?\)/g,'').trim();
+  if(!name)return;
+  const a=document.createElement('a');
+  a.href='https://www.google.com/search?q='+encodeURIComponent(name+' 3D scanner price EU buy Europe kaina')+'&gl=lt&hl=en';
+  a.target='_blank'; a.rel='noopener';
+  a.title='Найти цену «'+name+'» в Европе (Google)';
+  a.innerHTML=td.innerHTML;
+  td.innerHTML=''; td.appendChild(a);
+});
+// copy-on-click для ячеек таблиц (клик по ссылке -> переход, не копирование)
+document.querySelectorAll('td').forEach(td=>{
+  td.addEventListener('click',(e)=>{
+    if(e.target.closest('a'))return;
+    const t=td.innerText.trim(); if(!t)return;
+    navigator.clipboard.writeText(t).then(()=>{
+      const h=document.getElementById('hint');
+      h.textContent='Скопировано: '+(t.length>40?t.slice(0,40)+'…':t)+' ✓';
+      h.classList.add('show'); setTimeout(()=>h.classList.remove('show'),1200);
+    });
+  });
+});
+// сортировка по клику на заголовок (для обеих таблиц)
+function makeSortable(tableId){
+document.querySelectorAll('#'+tableId+' th').forEach((th,i)=>{
+  let asc=true;
+  th.addEventListener('click',()=>{
+    const tb=document.querySelector('#'+tableId+' tbody');
+    const rows=[...tb.rows];
+    rows.sort((a,b)=>{
+      const x=a.cells[i].innerText.replace(/[^0-9.,]/g,'').replace(',','');
+      const y=b.cells[i].innerText.replace(/[^0-9.,]/g,'').replace(',','');
+      const nx=parseFloat(x),ny=parseFloat(y);
+      if(!isNaN(nx)&&!isNaN(ny))return asc?nx-ny:ny-nx;
+      return asc?a.cells[i].innerText.localeCompare(b.cells[i].innerText)
+               :b.cells[i].innerText.localeCompare(a.cells[i].innerText);
+    });
+    asc=!asc; rows.forEach(r=>tb.appendChild(r));
+  });
+});
+}
+makeSortable('t'); makeSortable('t2'); makeSortable('t3'); makeSortable('t4'); makeSortable('t6'); makeSortable('t7');
+</script>
+</body>
+</html>
