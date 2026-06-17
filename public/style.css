@@ -223,6 +223,9 @@ footer{color:var(--muted);font-size:.84rem;margin-top:44px;border-top:1px solid 
   .langbar{top:14px;right:14px}
   .srcs{columns:1}
   th,td{padding:10px 11px}
+  /* на мобиле ничего не залипает — иначе панели висят и мешают */
+  nav.toc{position:static}
+  th{position:static}
   /* сворачиваемое оглавление в кнопку-меню */
   nav.toc{border-radius:12px;padding:0}
   nav.toc strong{display:flex;align-items:center;justify-content:space-between;
